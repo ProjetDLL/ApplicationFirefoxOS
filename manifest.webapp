@@ -2,7 +2,7 @@
 
 	"version": "1.0",
 	"name": "Programme TV",
-	"description" "Programme TV",
+	"description": "Programme TV",
 	"icons": {
 			"16": "/icons/icon_16.png",
 			"32": "/icons/icon_32.png",
@@ -10,7 +10,7 @@
 			"128": "/icons/icon_128.png"
 	},
 	"launch_path": "/html/index.html",
-	"developper" {
+	"developper": {
 			"name": "Christelle AYANGMA, Kevin ANANDOUT, Lainy VINCENT",
 			"url": ""
 	},
