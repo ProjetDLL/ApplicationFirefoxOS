@@ -6,20 +6,8 @@
     <script type="text/javascript" src="../js/jquery.mobile-1.4.5.min.js"></script>
     <script type="text/javascript" src="../js/jquery-2.1.3.min.js"></script>
     <script type="text/javascript" src="../js/hammer.min.js"></script>
-    <script>
-    	 
-           
-                       var xhr = new XMLHttpRequest({mozSystem: true});
-			xhr.open("GET", "http://xmltv.dtdns.net/alacarte/ddl?fichier=/xmltv_site/xmlPerso/indianboy.xml", true);
-			xhr.onreadystatechange = function() {
-			  if (xhr.readyState == 4) {
-				$("#log").html(xhr.responseText);
-			  }
-			}
-			xhr.send();
-                       
-                       
-    </script>
+    <script type="text/javascript" src="../js/getXML.js"></script>
+
     
  </head>
   
