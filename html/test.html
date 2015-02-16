@@ -1,59 +1,83 @@
-<!DOCTYPE HTML> 
 <html>
     <head>
         <title>Swipe 2</title>
         <meta http-equiv="X-UA-Compatible" content="IE=8">
         <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/> 
         <link href='../css/style.css' rel='stylesheet'/>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src='../js/swipe.js'></script>
+        <script src='../js/jquery-2.1.3.min.js'></script>     
+        <script type="text/javascript" src="../js/getXML.js"></script>
     </head>
 
-    <body style="background-color: yellow;">
+    <body>
 
-    <h1>Swipe 2</h1>
-
-
-
-    <div id='mySwipe' style='max-width:500px;margin:0 auto' class='swipe'>
+        <header>
+            <h1 id="appTitle">Programme TV</h1>
+            <img id="listIcon" src="../img/icons/ic_list_white_24dp.png"/>
+        </header>
         
-      <div class='swipe-wrap'>
-        <div><b>0</b></div>
-        <div><b>1</b></div>
-        <div><b>2</b></div>
-        <div><b>3</b></div>
-      </div>
+
+        <div id='mySwipe' style='max-width:500px;margin:0 auto' class='swipe'>
+
+          <div class='swipe-wrap'>
+            <div>
+                <div id="b">
+                    <div id="channel"></div>
+                    <div id="mainProgram">
+                        <h3 id="title">Secret story</h3>
+                        <h2 id="startANDduration">20h50 (duree 3h)</h2>
+                        <h2>Description: </h2>
+                        <p id="description">
+                            Blablablaaaa blaaaa blaaaaa
+                            Blablablaaaa blaaaa blaaaaa
+                            Blablablaaaa blaaaa blaaaaa
+                            Blablablaaaa blaaaa blaaaaaBlablablaaaa blaaaa blaaaaa
+                            Blablablaaaa blaaaa blaaaaa
+                        </p>
+                    </div>
+                    <img id="iconArrow" src="../img/icons/arrow_down.png"/>
+                </div>
+            </div>
+              
+            <div>
+                <div id="b">
+                    <div id="channel"></div>
+                </div>
+            </div>
+              
+              <div>
+                <div id="b">
+                    2
+                </div>
+            </div>
+              
+              <div>
+                <div id="b">
+                    3
+                </div>
+            </div>
+              
+          </div>
+
+        </div>
+               
+        <script src='../js/slideGesture.js'></script>
         
-    </div>
-
-
-
-    <div style='text-align:center;padding-top:20px;'>
-  
-        <button onclick='mySwipe.prev()'>prev</button> 
-        <button onclick='mySwipe.next()'>next</button>
-
-    </div>
-
-
-
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src='../js/swipe.js'></script>
-<script src='../js/jquery-2.1.3.min.js'></script>        
-<script>
-
-// pure JS
-var elem = document.getElementById('mySwipe');
-window.mySwipe = Swipe(elem, {
-  // startSlide: 4,
-  // auto: 3000,
-  // continuous: true,
-  // disableScroll: true,
-  // stopPropagation: true,
-  // callback: function(index, element) {},
-  // transitionEnd: function(index, element) {}
-});
-
-// with jQuery
-// window.mySwipe = $('#mySwipe').Swipe().data('Swipe');
-
-</script>
+        <template id="structure">
+            <div id="channel"><h1></h1></div>
+                <div id="mainProgram">
+                    <h3 id="title"></h3>
+                        <h2 id="startANDduration"></h2>
+                        <h2>Description: </h2>
+                        <p id="description">   
+                        </p>
+                </div>
+                <img id="iconArrow" src="../img/icons/arrow_down.png"/>
+        </template>
+    
+    </body>
+    
+    
+    
+</html>
