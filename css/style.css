@@ -108,6 +108,12 @@ html, body {
    color: #34495E;
 }
 
+#subtitle{
+   padding-top: 5px;
+   font-size: 18px;
+   color: #34495E;
+}
+
 #startANDduration{
     color: #34495E;
     font-size: 16px;
@@ -116,13 +122,43 @@ html, body {
 
 #description{
     width: 278px;
-    height: 150px;
+    height: 115px;
     margin-left: 10px;
     color: #34495E;
+    overflow-y: hidden;
 
 }
 
 #iconArrow{
     padding-left: 43%;
-    margin-top: -10px;
+    margin-top: 10px;
+}
+
+#programList{
+    padding-top: 0px;
+    padding-bottom: 15px;
+}
+
+#programList li{
+    padding-top: 20px;
+    padding-bottom: 15px;
+    border-style: none solid solid none;
+    border-color: -moz-use-text-color black black -moz-use-text-color;
+    border-width: medium 0.5px 0.5px medium;
+    width: 300px;
+    border-right: none;
+
+}
+
+#programList li #title{
+    padding-top: 0px;
+    font-size: 20px;
+}
+
+#programList li #subtitle{
+    font-size: 15px;
+}
+
+#programList li #startANDduration{
+    font-size: 13px;
 }

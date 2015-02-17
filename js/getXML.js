@@ -8,7 +8,7 @@ xhr.onreadystatechange = function() {
         // balise chaine
         var channels = xhr.responseXML.getElementsByTagName("channel");//balise chaine - liste de toutes leschaines
             var channelId = channels[0].getAttribute("id");
-            var channelName = channels[0].getElementsByTagName("display-name");
+            var channelName = channels[0].getElementsByTagName("display-name")[0].textContent;
             
         //balise programme
         var programmes = xhr.responseXML.getElementsByTagName("programme");
@@ -20,9 +20,9 @@ xhr.onreadystatechange = function() {
                 programmeStart.substring(8,10) + "h" + 
                 programmeStart.substring(10,12);
         
-            var programmeTitre = programmes[0].getElementsByTagName("title");
-            var programmeSousTitre = programmes[0].getElementsByTagName("sub-title");
-            var programmeDesc = programmes[0].getElementsByTagName("desc");
+            var programmeTitre = programmes[0].getElementsByTagName("title")[0].textContent;
+            var programmeSousTitre = programmes[0].getElementsByTagName("sub-title")[0].textContent;
+            var programmeDesc = programmes[0].getElementsByTagName("desc")[0].textContent;
             var programmeLength = programmes[0].getElementsByTagName("length");
             var lenghtUnit = programmeLength[0].getAttribute("units");
             
@@ -32,7 +32,8 @@ xhr.onreadystatechange = function() {
         //$("#channel").html(channels[0].getElementsByTagName("display-name")); //Nom chaine
         $("#channel").html(channelName);
         $("#title").html(programmeTitre);
-        $("#startANDduration").html(debut+" ("+programmeLength+" "+lenghtUnit+")");
+        $("#subtitle").html("("+programmeSousTitre+")");
+        $("#startANDduration").html(debut+" ("+programmeLength[0].textContent+" "+lenghtUnit+")");
         $("#description").html(programmeDesc);
         
 			

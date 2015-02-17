@@ -8,6 +8,10 @@
         <script src='../js/swipe.js'></script>
         <script src='../js/jquery-2.1.3.min.js'></script>     
         <script type="text/javascript" src="../js/getXML.js"></script>
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="theme-color" content="#0288D1">
     </head>
 
     <body>
@@ -26,6 +30,7 @@
                     <div id="channel"></div>
                     <div id="mainProgram">
                         <h3 id="title"></h3>
+                        <h3 id="subtitle"></h3>
                         <h2 id="startANDduration"></h2>
                         <h2>Description: </h2>
                         <p id="description">
@@ -33,6 +38,25 @@
                         </p>
                     </div>
                     <img id="iconArrow" src="../img/icons/arrow_down.png"/>
+                    <div id="nextPrograms">
+                        <ul id="programList">
+                            <li id="program1">
+                              <h3 id="title">TITRE 1</h3>
+                              <h3 id="subtitle">SUB1</h3>
+                              <h3 id="startANDduration">le 17/02/2015 (50 minutes)</h3>  
+                            </li>
+                            <li id="program2">
+                              <h3 id="title">TITRE 2</h3>
+                              <h3 id="subtitle">SUB2</h3>
+                              <h3 id="startANDduration">le 17/02/2015 (50 minutes)</h3>  
+                            </li>
+                            <li id="program3">
+                              <h3 id="title">TITRE 2</h3>
+                              <h3 id="subtitle">SUB2</h3>
+                              <h3 id="startANDduration">le 17/02/2015 (50 minutes)</h3>    
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
               
@@ -59,6 +83,7 @@
         </div>
                
         <script src='../js/slideGesture.js'></script>
+        <script src='../js/scrollGesture.js'></script>
         
         <template id="structure">
             <div id="channel"><h1></h1></div>
