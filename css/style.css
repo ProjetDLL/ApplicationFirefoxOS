@@ -87,6 +87,7 @@ html, body {
 }
 .swipe-wrap {
   overflow: hidden;
+  width: 1280px!important;
   position: relative;
 }
 .swipe-wrap > div {
