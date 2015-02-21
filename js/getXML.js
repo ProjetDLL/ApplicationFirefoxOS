@@ -25,6 +25,8 @@ xhr.onreadystatechange = function() {
             	tran = tran + 320;
             }
             
+
+
     		var dive = document.createElement('div');
              dive.id = 'b';
              
@@ -98,6 +100,7 @@ xhr.onreadystatechange = function() {
 	            div[0].appendChild(divg);
     	}
     	
+        document.getElementById("splashScreen").style.display = "none";
 			
    }
 }

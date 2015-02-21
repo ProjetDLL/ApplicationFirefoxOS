@@ -8,6 +8,30 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, del, dfn, em, 
   background:transparent;
 }
 
+#splashScreen{
+    width: 100%;
+    height: 100%;
+    background-color: #0288D1;
+    text-align: center;
+    z-index: 1000;
+}
+
+#splashScreen h1{
+    color: white;
+    font-size: 35px;
+    padding-top: 50%
+}
+
+#splashScreen h3{
+    color: white;
+    font-size: 15px;
+    padding-top: 5%;
+}
+
+#loadingGif{
+   padding-top: 40%;
+}
+
 header{
     margin-top: 0px;
     width: 100%;
