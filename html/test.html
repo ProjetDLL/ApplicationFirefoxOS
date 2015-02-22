@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Swipe 2</title>
+        <title>Programme TV</title>
         <meta http-equiv="X-UA-Compatible" content="IE=8">
         <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/> 
         <link href='../css/style.css' rel='stylesheet'/>
@@ -15,11 +15,13 @@
     </head>
 
     <body>
+        
         <div id="splashScreen" style="display:">
             <h1>Programme TV</h1>
             <img id="loadingGif" src="../img/loading.gif"/>
             <h3>Chargement ...</h3>
         </div> 
+
         <header>
             <h1 id="appTitle">Programme TV</h1>
             <img id="listIcon" src="../img/icons/ic_list_white_24dp.png"/>
@@ -28,14 +30,17 @@
 
         <div id='mySwipe' style='max-width:500px;margin:0 auto' class='swipe'>
 
-          <div class='swipe-wrap'></div>
-
-        </div>
-               
+          <div class='swipe-wrap'>
+            
+          </div> <!--end swipe-wrap -->
+        </div> <!--end mySwipe -->
+        
         <script src='../js/slideGesture.js'></script>
         <script src='../js/scrollGesture.js'></script>
         
         <template id="structure">
+            <div>
+                <div id="b">
                   <div id="channel"></div>
                     <div id="mainProgram">
                         <h3 id="title"></h3>
@@ -64,8 +69,10 @@
                               <h3 id="subtitle">SUB2</h3>
                               <h3 id="startANDduration">le 17/02/2015 (50 minutes)</h3>    
                             </li>
-                        </ul>
-                    </div>
+                        </ul> <!--end programmList -->
+                    </div> <!--end nextPrograms-->
+                </div> <!--end b -->
+            </div> <!--end div -->
         </template>
     
     </body>
