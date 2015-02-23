@@ -22,9 +22,9 @@ xhr.onreadystatechange = function() {
             divGeneral.style = 'width: 320px; left: ' + wid + 'px; transition-duration: 300ms; transform: translateX(' + 
             tran + 'px);';
             
-            wid = wid - 320;
+            wid = wid - screen.width;
             if(tran == 0){
-                tran = tran + 320;
+                tran = tran + screen.width;
             }
             
             //Création de la div b qui contiendra la chaîne
@@ -81,12 +81,34 @@ xhr.onreadystatechange = function() {
 
                         //On teste la présence d'une description
                         var programmeDesc = null;
+                        var programmeCredits = null;
+                        var programmeDirecteur = null;
+                        var programmeActeurs = null;
+                        var acteurs = null;
+                        var programmeDate = null;
+                        var programmeType= null;
+                        var acteurs = null;
                         try{
                             programmeDesc = programmes[j].getElementsByTagName("desc")[0].textContent;
+                            //informations complémetaires
+                            programmeCredits = programmes[j].getElementsByTagName("credits")[0];
+                            programmeDirecteur = programmeCredits.getElementsByTagName("director")[0].textContent;
+                            programmeActeurs = programmeCredits.getElementsByTagName("actor");
+                            
+
+                            for(var x = 0; x<programmeActeurs.length; x++){
+                                acteurs += programmeActeurs[x].textContent+", ";
+
+                            }
+
+                            programmeDate = programmes[j].getElementsByTagName("date")[0].textContent;
+                            programmeType = programmes[j].getElementsByTagName("category");
                         }
                         catch(exceptiondesc){
                             //Si la balise description est absente, on informe l'utilisateur
                             programmeDesc = "Pas de description";
+                            
+                            
                         }
                         
                         var programmeLength = programmes[j].getElementsByTagName("length");
@@ -123,7 +145,30 @@ xhr.onreadystatechange = function() {
                 tmp.textContent = debut + " (" + programmeLength[0].textContent + " " + lenghtUnit +")";
                 
                 //Insertion de la description du programme
-                templateClone.getElementById('mainProgram').lastElementChild.textContent = programmeDesc;
+                //templateClone.getElementById('mainProgram').lastElementChild.textContent = programmeDesc;
+                
+                var infoComplementaire = templateClone.getElementById('info_complementaire').firstElementChild;
+                // affichage de la description du programme
+                var description = infoComplementaire.nextElementSibling;
+                description.textContent = programmeDesc;
+                
+                //affichage des participants
+                var directeur = description.nextElementSibling.nextElementSibling.nextElementSibling;
+                directeur.textContent = programmeDirecteur;
+                
+                //affichage des acteurs
+                var actors = directeur.nextElementSibling.nextElementSibling;
+                actors.textContent = acteurs;
+                
+                //affichage date de sortie du programme
+                var dateSortie = actors.nextElementSibling.nextElementSibling;
+                dateSortie.textContent = programmeDate;
+                
+                //affichage du type du programme
+                var type = dateSortie.nextElementSibling.nextElementSibling;
+                type.textContent = programmeType;
+                
+               
                 
                 //On rattache notre template à jour à la divB
                 divB.appendChild(templateClone);
@@ -135,8 +180,14 @@ xhr.onreadystatechange = function() {
                 divParent[0].appendChild(divGeneral);
         }
         
-        document.getElementById('splashScreen').style.display = 'none';
+       
    }
-}
+        document.getElementById("info_complementaire").addEventListener("click", function(){document.getElementById("info_complementaire").style.height = "auto";}, false);
+        document.getElementById("info_complementaire").addEventListener("dblclick", function(){document.getElementById("info_complementaire").style.height = "115px";}, false);
+        document.getElementById('splashScreen').style.display = 'none';
+
+    }
+
+
 
 xhr.send();
