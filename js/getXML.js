@@ -12,6 +12,9 @@ xhr.onreadystatechange = function() {
         var tran = 0;
         var divg;
         
+        //Cette variable servira à quitter la boucle des programmes quand une chaîne est totalement renseignée
+        var nextP = 0;
+        
         for(i = 0; i < channels.length; i++){
             
             //Création de la div général
@@ -56,68 +59,170 @@ xhr.onreadystatechange = function() {
                 for(j = 0; j < programmes.length; j++){
                     
                     //On stocke le numéro de la chaîne courante
-                     var programmeId = programmes[j].getAttribute("channel");
-                     
-                     //On regarde si le numéro de la chaîne courante match avec le numéro contenu dans l'attribut channel de la balise programme
-                     if(programmeId == channelId){
-                         var programmeStart = programmes[j].getAttribute("start");
-                            var debut = "Le " + programmeStart.substring(6,8) + "/" + 
-                            programmeStart.substring(4,6) + "/" + 
-                            programmeStart.substring(0,4) + " a " + 
-                            programmeStart.substring(8,10) + "h" + 
-                            programmeStart.substring(10,12);
+                    var programmeId = programmes[j].getAttribute("channel");
                     
-                        var programmeTitre = programmes[j].getElementsByTagName("title")[0].textContent;
-                        
-                        //On teste la présence du sous titre                        
-                        var programmeSousTitre = null;
-                        try{
-                            programmeSousTitre = "("+programmes[j].getElementsByTagName("sub-title")[0].textContent+")";
-                        }
-                        catch(exceptiondesc){
-                            //Si la balise sous titre est absente, on met null pour ne pas bloquer l'exécution du code
-                            programmeSousTitre = null;
-                        }
+                    // On sauvegarde la date et l'heure de fin du programme courant
+                    var programmeStop = programmes[j].getAttribute("stop");
+                    var datestop = new Date(parseInt(programmeStop.substring(0,4)), (parseInt(programmeStop.substring(4,6))) - 1,
+                            parseInt(programmeStop.substring(6,8)), parseInt(programmeStop.substring(8,10)), 
+                          (programmeStop.substring(10,12)), 0);
+                    
+                    // Pour la comparaison, on convertit cette date en millisecondes
+                    datestop = datestop.getTime();
+                    
+                    // Date du jour en millisecondes
+                    var dateJour = new Date().getTime();
+                    
+                    // On positionne notre variable à 0 --> Chaîne non complétée
+                    nextP = 0;
+                    
+                    /*On regarde si le numéro de la chaîne courante match avec le numéro contenu dans l'attribut channel
+                     * de la balise programme.
+                     * De plus, on regarde si la date courante est plus petite que la date de fin du programme
+                     * courant --> Si oui, on sait que ce programme passe actuellement donc on l'affiche.
+                     */
+                    if((programmeId == channelId) && (new Number(dateJour) < new Number(datestop))){
+                        var programmeStart = programmes[j].getAttribute("start");
+                           var debut = "Le " + programmeStart.substring(6,8) + "/" + 
+                           programmeStart.substring(4,6) + "/" + 
+                           programmeStart.substring(0,4) + " a " + 
+                           programmeStart.substring(8,10) + "h" + 
+                           programmeStart.substring(10,12);
+                           
+                       var programmeTitre = programmes[j].getElementsByTagName("title")[0].textContent;
+                       
+                       //On teste la présence du sous titre                        
+                       var programmeSousTitre = null;
+                       try{
+                           programmeSousTitre = "("+programmes[j].getElementsByTagName("sub-title")[0].textContent+")";
+                       }
+                       catch(exceptiondesc){
+                           //Si la balise sous titre est absente, on met null pour ne pas bloquer l'exécution du code
+                           programmeSousTitre = null;
+                       }
 
+                       
+                       var programmeDesc, programmeDirecteur, programmeCredits, programmeActeurs, acteurs, programmeDate, programmeType = null;
+                       
                         //On teste la présence d'une description
-                        var programmeDesc = null;
-                        var programmeCredits = null;
-                        var programmeDirecteur = null;
-                        var programmeActeurs = null;
-                        var acteurs = null;
-                        var programmeDate = null;
-                        var programmeType= null;
-                        var acteurs = null;
                         try{
                             programmeDesc = programmes[j].getElementsByTagName("desc")[0].textContent;
-                            //informations complémetaires
-                            programmeCredits = programmes[j].getElementsByTagName("credits")[0];
-                            programmeDirecteur = programmeCredits.getElementsByTagName("director")[0].textContent;
-                            programmeActeurs = programmeCredits.getElementsByTagName("actor");
-                            
-
-                            for(var x = 0; x<programmeActeurs.length; x++){
-                                acteurs += programmeActeurs[x].textContent+", ";
-
-                            }
-
-                            programmeDate = programmes[j].getElementsByTagName("date")[0].textContent;
-                            programmeType = programmes[j].getElementsByTagName("category");
                         }
                         catch(exceptiondesc){
                             //Si la balise description est absente, on informe l'utilisateur
                             programmeDesc = "Pas de description";
-                            
-                            
                         }
+                        
+                      //informations complémetaires
+                        programmeType = programmes[j].getElementsByTagName("category")[0].textContent;
+                        programmeCredits = programmes[j].getElementsByTagName("credits")[0];
+                        
+                        if(programmeType ==  'Documentaire' || programmeType == 'Feuilleton' ||
+                        		programmeType == 'Film' || programmeType == 'Téléfilm' ||
+                        		programmeType == 'Série'){
+                        	
+                        	try{
+                                programmeDirecteur = programmeCredits.getElementsByTagName("director")[0].textContent;
+                                programmeActeurs = programmeCredits.getElementsByTagName("actor");
+                                
+                                for(var x = 0; x < programmeActeurs.length; x++){
+                                    acteurs += programmeActeurs[x].textContent + ", ";
+
+                                }
+
+                            }
+                            catch(exceptiondesc){
+                                //Si cette balise est absente, on informe l'utilisateur
+                            }
+                        }
+                        
+                        
+                        else if(programmeType == 'Magazine' || programmeType == 'Jeu' ||
+                        		programmeType == 'Journal' || programmeType == 'Divertissement'){
+                        	try{
+                                programmeDirecteur = programmeCredits.getElementsByTagName("presenter")[0].textContent;
+
+                            }
+                            catch(exceptiondesc){
+                                //Si cette balise est absente, on informe l'utilisateur
+                            }
+                        }
+                        
+                    	try{
+                    		programmeDate = programmes[j].getElementsByTagName("date")[0].textContent;
+
+                        }
+                        catch(exceptiondesc){
+                            //Si cette balise est absente, on informe l'utilisateur
+                        }
+                        
+                        
+                        
                         
                         var programmeLength = programmes[j].getElementsByTagName("length");
                         var lenghtUnit = programmeLength[0].getAttribute("units");
                         
-                        //Instruction temporaire pour récupérer le 1er programme de chaqu chaîne
-                        break;
-                     }
+                      //On se positionne sur la balise des prochains programmes dans le template
+                        var nextProg = templateClone.getElementById('programList').firstElementChild;
+                        var baliseCourante = null;
                         
+                        var programmeStartNext, lenghtUnitNext, debutNext, programmeLengthNext;
+                        
+                        /* Ici, affichage des prochains programmes de la chaîne courante
+                         * La variable q permet de limiter l'affichage auxx 3 prochains programmes correspondant
+                         * à la chaîne.
+                         * On intialise une variable j au programme suivant et qui correspondant toujours à la
+                         * chaîne courante.
+                         */
+                        for(q = 0, p = j + 1; q < 3 && programmeId == programmes[p].getAttribute("channel"); q++, p++){
+                            
+                            //On se positionne sur la 1ère balise des next programmes
+                            baliseCourante = nextProg.firstElementChild;
+                            
+                            //On attache le titre de l'émission suivante
+                            baliseCourante.textContent = programmes[p].getElementsByTagName("title")[0].textContent;
+                            
+                            //Passage au voisin suivant;
+                            baliseCourante = baliseCourante.nextElementSibling;
+                            
+                            //On essaye de charger le sous titre.
+                            try{
+                                baliseCourante.textContent = programmes[p].getElementsByTagName("sub-title")[0].textContent;
+                            }
+                            catch(exceptiondesc){
+                                //Si la balise sous titre est absente, on met null pour ne pas bloquer l'exécution du code
+                                baliseCourante.textContent = null;
+                            }
+                            
+                            //Voisin suivant
+                            baliseCourante = baliseCourante.nextElementSibling;
+                            
+                            //Formattage de la variable start pour le début de programme
+                            programmeStartNext = programmes[p].getAttribute("start");
+                            debutNext = "Le " + programmeStartNext.substring(6,8) + "/" + 
+                            programmeStartNext.substring(4,6) + "/" + 
+                            programmeStartNext.substring(0,4) + " a " + 
+                            programmeStartNext.substring(8,10) + "h" + 
+                            programmeStartNext.substring(10,12);
+                            
+                            programmeLengthNext = programmes[p].getElementsByTagName("length");
+                            lenghtUnitNext = programmeLengthNext[0].getAttribute("units");
+                            
+                            //On écrit dans cette balise les informations sur l'heure de début du programme
+                            baliseCourante.textContent = debutNext + " (" + programmeLengthNext[0].textContent + " " + lenghtUnitNext +")";
+                            
+                            //On passe à la balise "programJ" suivant
+                            nextProg = nextProg.nextElementSibling;
+                        }
+                        /* Cette chaîne contient déjà la liste des prochains programmes
+                         * Ceci permettra de sortir de la boucle pour passer à la chaîne suivante
+                         */
+                        nextP = 1;
+                     }
+                    //On met cette conition pour quitter la boucle des programmes et passer à la chaîne suivante
+                    if(nextP == 1){
+                        break;
+                    }    
                     
                 }
                 
