@@ -289,8 +289,14 @@ xhr.onreadystatechange = function() {
    }
         document.getElementById("info_complementaire").addEventListener("click", function(){document.getElementById("info_complementaire").style.height = "auto";}, false);
         document.getElementById("info_complementaire").addEventListener("dblclick", function(){document.getElementById("info_complementaire").style.height = "115px";}, false);
+        document.getElementById('listIcon').addEventListener("click", function(){document.getElementById('listeProgramme').style.display = "block";}, false);
+        document.getElementById('closeIcon').addEventListener("click", function(){document.getElementById('listeProgramme').style.display = "none";}, false);
         document.getElementById('splashScreen').style.display = 'none';
-
+        
+        //document.getElementById('splashScreen').style.zindex = '0'; //test
+  
+        //Liste de sélection des chaînes
+        //document.getElementById('listeProgramme').style.display = 'none';
     }
 
 
