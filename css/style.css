@@ -8,6 +8,11 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, del, dfn, em, 
   background:transparent;
 }
 
+ul, li{
+	
+	list-style: none;
+}
+
 #splashScreen{
     width: 100%;
     height: 100%;
@@ -85,7 +90,7 @@ body {
   -webkit-text-size-adjust:none;
   font-family:sans-serif;
   min-height:416px;
-  overflow-y: hidden;
+ overflow-x: hidden;
 }
 
 #appTitle {
@@ -138,14 +143,13 @@ html, body {
 }
 
 .swipe {
-  overflow: hidden;
   visibility: hidden;
   position: relative;
 }
 .swipe-wrap {
-  overflow: hidden;
-  width: 1280px!important;
+  overflow-y: auto;
   position: relative;
+  top: 90px;
 }
 .swipe-wrap > div {
   float:left;

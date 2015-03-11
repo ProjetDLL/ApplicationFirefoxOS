@@ -1,41 +1,33 @@
 var xhr = new XMLHttpRequest({mozSystem: true});
 xhr.open("GET", "http://xmltv.dtdns.net/alacarte/ddl?fichier=/xmltv_site/xmlPerso/indianboy.xml", true);
 
+for(d = 0; d < 18; d++){
+	
+    //Création de la div général
+    divGeneral = document.createElement('div');
+    divGeneral.id = d;
+	
+    var divB = document.createElement('div');
+    divB.id = 'b' + d;
+    
+    divGeneral.appendChild(divB);
+    var doclass = document.getElementsByClassName('swipe-wrap');
+    doclass[0].appendChild(divGeneral);
+}
+
 
 xhr.onreadystatechange = function() {
     if (xhr.readyState == 4) {
         
         var channels = xhr.responseXML.getElementsByTagName("channel");//balise chaine - liste de toutes les chaines
-         
-        //Ces deux variables serviront pour le positionnement des différentes divGeneral
-        var wid = 0;
-        var tran = 0;
+        
         var divg;
         
         //Cette variable servira à quitter la boucle des programmes quand une chaîne est totalement renseignée
         var nextP = 0;
         
         for(i = 0; i < channels.length; i++){
-            
-            //Création de la div général
-            divGeneral = document.createElement('div');
-            
-            //Positionnement de la div créée en haut pour le défilement horizontal des chaînes
-            divGeneral.setAttribute('data-index', i);
-            divGeneral.style = 'width: 320px; left: ' + wid + 'px; transition-duration: 300ms; transform: translateX(' + 
-            tran + 'px);';
-            
-            wid = wid - screen.width;
-            if(tran == 0){
-                tran = tran + screen.width;
-            }
-            
-            //Création de la div b qui contiendra la chaîne
-            var divB = document.createElement('div');
-            divB.id = 'b';
-             
-            
-        
+        		
                 //On récupère l'ID et le nom de la chaine
                 var channelId = channels[i].getAttribute("id");
                 var channelName = channels[i].getElementsByTagName("display-name")[0].textContent;
@@ -275,14 +267,17 @@ xhr.onreadystatechange = function() {
                 
                
                 
-                //On rattache notre template à jour à la divB
-                divB.appendChild(templateClone);
+                //On rattache notre template à jour à la divB en fonction du numéro de la chaîne.
+                var itemp = 'b' + i;
+                var divbb = document.getElementById(itemp);
+                divbb.appendChild(templateClone);
                 
                 //Notre divB qui contient notre template fourni est rattaché à la div générale
-                divGeneral.appendChild(divB);
+                var divgg = document.getElementById(i);
+                divgg.appendChild(divbb);
                 
                 //Rattachement de la divGeneral à divParent (la div swipe-wrap)
-                divParent[0].appendChild(divGeneral);
+                divParent[0].appendChild(divgg);
         }
         
        
