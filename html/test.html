@@ -3,12 +3,14 @@
         <title>Programme TV</title>
         <meta http-equiv="X-UA-Compatible" content="IE=8">
         <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/> 
+        
         <link href='../css/style.css' rel='stylesheet'/>
+        <link href='../css/bootstrap.css' rel='stylesheet'/>
         
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-        <meta name="theme-color" content="#0288D1">
+        <meta name="theme-color" content="#2E3234">
     </head>
 
     <body>
@@ -48,15 +50,21 @@
            
 
  
-                    <div id="channel"></div>
+            <div id="channel">
+                <h1 id="channelName"></h1>
+                <ul id="temps">
+                    <li id="now" class="now" style="text-shadow: 0px 0px 0px white;">Maintenant</li>
+                    <li id="tonight" class="tonight" style="text-shadow: 0px 0px 0px white;">Ce soir</li>
+                </ul>
+            </div>
 
-                    <div id="mainProgram">
+                    <div id="mainProgram" class="mainProgram" style="display: block">
                         <h3 id="title"></h3>
                         <h3 id="subtitle"></h3>
                         <h2 id="startANDduration"></h2>
                         
                         <!-- info complementaire -->
-                        <div id='info_complementaire'>
+                        <div id='info_complementaire' class='info_complementaire'>
                             
                              <h2>Description: </h2>
                              <!-- <p id="description" onclick="test();" ondblclick="test2();">-->
@@ -76,8 +84,56 @@
                         </div>
                         
                     </div>
-                    <img id="iconArrow" src="../img/icons/arrow_down.png"/>
-                    <div id="nextPrograms">
+                    <img id="iconArrow" src="../img/icons/arrow_down.png" style="display: block"/>
+                    <div id="nextPrograms" class="nextPrograms" style="display: block">
+                        <ul id="programList">
+                            <li id="program1">
+                              <h3 id="title">TITRE 1</h3>
+                              <h3 id="subtitle">SUB1</h3>
+                              <h3 id="startANDduration">le 17/02/2015 (50 minutes)</h3>  
+                            </li>
+                            <li id="program2">
+                              <h3 id="title">TITRE 2</h3>
+                              <h3 id="subtitle">SUB2</h3>
+                              <h3 id="startANDduration">le 17/02/2015 (50 minutes)</h3>  
+                            </li>
+                            <li id="program3">
+                              <h3 id="title">TITRE 2</h3>
+                              <h3 id="subtitle">SUB2</h3>
+                              <h3 id="startANDduration">le 17/02/2015 (50 minutes)</h3>    
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    
+                    <div id="tonightMainProgram" class="tonightMainProgram" style="display: none; background-color: blue;">
+                        <h3 id="title"></h3>
+                        <h3 id="subtitle"></h3>
+                        <h2 id="startANDduration"></h2>
+                        
+                        <!-- info complementaire -->
+                        <div id='info_complementaire' class='info_complementaire'>
+                            
+                             <h2>Description: </h2>
+                             <!-- <p id="description" onclick="test();" ondblclick="test2();">-->
+                             <p id="description">                    
+                            </p>
+                            
+                            <h3>Participants:</h3>
+                            <h2>Directeur:</h2>
+                                <p id="director"></p>
+                            <h2>Acteurs:</h2>
+                                <p id="acteurs"></p>
+                             <h3>Date:</h3>
+                                <p id="date"></p>x
+                             <h3>Type programme:</h3>
+                                <p id="category"></p>                                                                                       
+                            
+                        </div>
+                        
+                    </div>
+                    
+                    <div id="tonightNextPrograms" class="tonightNextPrograms" style="display: none;">
                         <ul id="programList">
                             <li id="program1">
                               <h3 id="title">TITRE 1</h3>

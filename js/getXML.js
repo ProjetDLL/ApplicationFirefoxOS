@@ -43,7 +43,7 @@ xhr.onreadystatechange = function() {
                 
                 
                 //On insère le nom de la chaîne dans notre template
-                templateClone.getElementById('channel').textContent = channelName;
+                templateClone.getElementById('channelName').textContent = channelName;
                 
                 //On récupère le contenu des balises programme
                 var programmes = xhr.responseXML.getElementsByTagName("programme");
@@ -281,19 +281,39 @@ xhr.onreadystatechange = function() {
         }
         
        
-   }
-        document.getElementById("info_complementaire").addEventListener("click", function(){document.getElementById("info_complementaire").style.height = "auto";}, false);
-        document.getElementById("info_complementaire").addEventListener("dblclick", function(){document.getElementById("info_complementaire").style.height = "115px";}, false);
+   }    
+    
+ 
         document.getElementById('listIcon').addEventListener("click", function(){document.getElementById('listeProgramme').style.display = "block";}, false);
         document.getElementById('closeIcon').addEventListener("click", function(){document.getElementById('listeProgramme').style.display = "none";}, false);
         document.getElementById('splashScreen').style.display = 'none';
-        
         //document.getElementById('splashScreen').style.zindex = '0'; //test
   
         //Liste de sélection des chaînes
         //document.getElementById('listeProgramme').style.display = 'none';
+        /*
+        for(var i = 0; i <  document.getElementsByClassName("info_complementaire").length; i++){
+             
+             document.getElementsByClassName("info_complementaire")[i].addEventListener("click", function(){this.style.height = "auto";}, false);
+             document.getElementsByClassName("info_complementaire")[i].addEventListener("dblclick", function(){this.style.height = "115px";}, false);
+             
+        }
+        
+        for(var j = 0; j <  document.getElementsByClassName("now").length; j++){
+            document.getElementsByClassName('now')[j].addEventListener("click", function(){
+                this.style.textShadow = "0px 0px 10px white";
+                document.getElementsByClassName('tonight')[j].style.textShadow = "0px 0px 0px white";
+                document.getElementsByClassName('tonightMainProgram')[j].style.display = "none";
+                document.getElementsByClassName('tonightNextPrograms')[j].style.display = "none";
+            }, false);
+
+            document.getElementsByClassName('tonight')[j].addEventListener("click", function(){
+                this.style.textShadow = "0px 0px 10px white";
+                document.getElementsByClassName('now')[j].style.textShadow = "0px 0px 0px white";
+                document.getElementsByClassName('MainProgram')[j].style.display = "none";
+                document.getElementsByClassName('NextPrograms')[j].style.display = "none";
+            }, false);
+        }*/
     }
 
-
-
-xhr.send();
+   xhr.send();

@@ -16,9 +16,10 @@ ul, li{
 #splashScreen{
     width: 100%;
     height: 100%;
-    background-color: #0288D1;
+    background-color: #1C2224;
     text-align: center;
     z-index: 1000;
+    overflow: hidden;
 }
 
 #splashScreen h1{
@@ -74,8 +75,11 @@ header{
     margin-top: 0px;
     width: 100%;
     height: 16%;
-    background-color: #0288D1;
-    position: absolute;
+    background-color: #1C2224;
+    position: fixed;
+    z-index: 100;
+    opacity: 0.95;
+    box-shadow: 0px 2px 20px rgb(0, 0, 0);
 }
 
 #listIcon{
@@ -90,7 +94,7 @@ body {
   -webkit-text-size-adjust:none;
   font-family:sans-serif;
   min-height:416px;
- overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 #appTitle {
@@ -149,7 +153,8 @@ html, body {
 .swipe-wrap {
   overflow-y: auto;
   position: relative;
-  top: 90px;
+  top: 53px;
+  background-color: #FFF;
 }
 .swipe-wrap > div {
   float:left;
@@ -158,28 +163,53 @@ html, body {
 }
 
 #channel{
-    font-weight:bold;
-    color:#0288D1;
-    font-size:40px;
+    font-weight: bold;
+    font-size: 40px;
     text-align: center;
+    border-width: 0px;
+    background-color: rgb(28, 34, 36);
+    color: white;
+    opacity: 0.95;
+    border-style: solid;
+    height: 20%;
+}
+
+#channelName{
+    padding-top: 5%;
+}
+
+#temps{
+    list-style: none outside none;
+    font-size: 13px;
+    margin-left: -15%;
+    margin-top: 7%;
+}
+
+#temps li{
+    display: inline-block;
+    padding-left: 70px;
+    text-align: center;
+    width: 50%;
+    margin-left: -3%;
+    //text-shadow: 0px 0px 10px white;
 }
 
 #title{
-   padding-top: 40px;
+   padding-top: 0px;
    font-size: 25px;
-   color: #34495E;
+   color: #1C2224;
    margin-left : 15px;
 }
 
 #subtitle{
    padding-top: 5px;
    font-size: 18px;
-   color: #34495E;
+   color: #1C2224;
    margin-left : 15px;
 }
 
 #startANDduration{
-    color: #34495E;
+    color: #1C2224;
     font-size: 16px;
     margin-left : 20px;
 }
@@ -188,13 +218,13 @@ html, body {
     width: 278px;
     height: 115px;
     margin-left: 10px;
-    color: #34495E;
+    color: #1C2224;
     overflow-y: hidden;
 
 }
 
 #iconArrow{
-    padding-left: 43%;
+    padding-left: 46%;
     margin-top: 10px;
 }
 
