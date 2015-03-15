@@ -291,29 +291,27 @@ xhr.onreadystatechange = function() {
   
         //Liste de sélection des chaînes
         //document.getElementById('listeProgramme').style.display = 'none';
-        /*
+        
         for(var i = 0; i <  document.getElementsByClassName("info_complementaire").length; i++){
              
              document.getElementsByClassName("info_complementaire")[i].addEventListener("click", function(){this.style.height = "auto";}, false);
              document.getElementsByClassName("info_complementaire")[i].addEventListener("dblclick", function(){this.style.height = "115px";}, false);
              
         }
+       /* 
+        for(var j = 0; j < document.getElementsByClassName('now').length; j++){
+            
+            document.getElementsByClassName("now")[j].addEventListener("click", function(){
+                document.getElementById('tonightMainProgram').style.display = 'block';
+                document.getElementById('mainProgram').style.display = 'none';
+            }, false);
+            
+        }
         
-        for(var j = 0; j <  document.getElementsByClassName("now").length; j++){
-            document.getElementsByClassName('now')[j].addEventListener("click", function(){
-                this.style.textShadow = "0px 0px 10px white";
-                document.getElementsByClassName('tonight')[j].style.textShadow = "0px 0px 0px white";
-                document.getElementsByClassName('tonightMainProgram')[j].style.display = "none";
-                document.getElementsByClassName('tonightNextPrograms')[j].style.display = "none";
-            }, false);
+        */
+        
+        
 
-            document.getElementsByClassName('tonight')[j].addEventListener("click", function(){
-                this.style.textShadow = "0px 0px 10px white";
-                document.getElementsByClassName('now')[j].style.textShadow = "0px 0px 0px white";
-                document.getElementsByClassName('MainProgram')[j].style.display = "none";
-                document.getElementsByClassName('NextPrograms')[j].style.display = "none";
-            }, false);
-        }*/
     }
 
    xhr.send();
