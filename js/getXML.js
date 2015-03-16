@@ -23,8 +23,6 @@ xhr.onreadystatechange = function() {
         
         var divg;
         
-        //Cette variable servira à quitter la boucle des programmes quand une chaîne est totalement renseignée
-        var nextP = 0;
         
         for(i = 0; i < channels.length; i++){
         		
@@ -64,6 +62,7 @@ xhr.onreadystatechange = function() {
                 listeAccesRapide.appendChild(itemListeAccesRapide);
                 
                 var token = 0;
+                var tokenS = 0;
                 
                 //On récupère le contenu des balises programme
                 var programmes = xhr.responseXML.getElementsByTagName("programme");
@@ -85,8 +84,6 @@ xhr.onreadystatechange = function() {
                     // Date du jour en millisecondes
                     var dateJour = new Date().getTime();
                     
-                    // On positionne notre variable à 0 --> Chaîne non complétée
-                    nextP = 0;
                     
                     /*On regarde si le numéro de la chaîne courante match avec le numéro contenu dans l'attribut channel
                      * de la balise programme.
@@ -249,7 +246,7 @@ xhr.onreadystatechange = function() {
                     
                     dateSoir = dateSoir.getTime();
                                         
-                    if((programmeId == channelId) && (new Number(dateSoir) <= new Number(datestart))){
+                    if((programmeId == channelId) && (new Number(dateSoir) <= new Number(datestart)) && tokenS == 0){
                         var programmeStartS = programmes[j].getAttribute("start");
                            var debutS = "Le " + programmeStartS.substring(6,8) + "/" + 
                            programmeStartS.substring(4,6) + "/" + 
@@ -385,10 +382,14 @@ xhr.onreadystatechange = function() {
                         /* Cette chaîne contient déjà la liste des prochains programmes
                          * Ceci permettra de sortir de la boucle pour passer à la chaîne suivante
                          */
-                        break outer;
+                        tokenS = 1;
                      }
                     
                     /*---------------------------------------------------------------------------*/
+                    
+                    if(token == 1 && tokenS == 1){
+                    	break outer;
+                    }
                     
                 }
                 
