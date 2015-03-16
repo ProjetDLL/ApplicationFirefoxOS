@@ -63,10 +63,12 @@ xhr.onreadystatechange = function() {
                 itemListeAccesRapide.appendChild(linkItemListeAccesRapide);
                 listeAccesRapide.appendChild(itemListeAccesRapide);
                 
+                var token = 0;
+                
                 //On récupère le contenu des balises programme
                 var programmes = xhr.responseXML.getElementsByTagName("programme");
                 
-                for(j = 0; j < programmes.length; j++){
+                outer: for(j = 0; j < programmes.length; j++){
                     
                     //On stocke le numéro de la chaîne courante
                     var programmeId = programmes[j].getAttribute("channel");
@@ -91,7 +93,7 @@ xhr.onreadystatechange = function() {
                      * De plus, on regarde si la date courante est plus petite que la date de fin du programme
                      * courant --> Si oui, on sait que ce programme passe actuellement donc on l'affiche.
                      */
-                    if((programmeId == channelId) && (new Number(dateJour) < new Number(datestop))){
+                    if((programmeId == channelId) && (new Number(dateJour) < new Number(datestop)) && token == 0){
                         var programmeStart = programmes[j].getAttribute("start");
                            var debut = "Le " + programmeStart.substring(6,8) + "/" + 
                            programmeStart.substring(4,6) + "/" + 
@@ -122,30 +124,6 @@ xhr.onreadystatechange = function() {
                             //Si la balise description est absente, on informe l'utilisateur
                             programmeDesc = "Pas de description";
                         }
-                       /* 
-                      //------------ MENU SELECTION RAPIDE DES CHAINES-------------
-                      
-                      	//récuperation de la div contenant la liste de séléction
-                      	  var divListprog = document.getElementById("listProgramme");
-                      	  
-                      	//récuperation de la liste ou inserer les éléments
-                      	  var ulListProg =  divListprog.getElementsByTagName("ul"); 
-                      	  
-                      	//Création du li
-                      	  var ilListProg = document.createElement("li");
-                      	  
-                      	//Création du a
-                      	 var aListProg = document.createElement("a");
-                      	 
-                      	//affectation d'un lien au a
-                      	  aListProg.setAttribute("href", "#id");
-                      	  
-                      	//Affectation du li au ul
-                      	  ulListProg.appendChil( "ilListProg");
-                      	  
-                      	                     
-                      //-----------------------------------------------------------
-                      */
                         
                       //informations complémetaires
                         programmeType = programmes[j].getElementsByTagName("category")[0].textContent;
@@ -251,12 +229,166 @@ xhr.onreadystatechange = function() {
                         /* Cette chaîne contient déjà la liste des prochains programmes
                          * Ceci permettra de sortir de la boucle pour passer à la chaîne suivante
                          */
-                        nextP = 1;
+                        token = 1;
                      }
-                    //On met cette conition pour quitter la boucle des programmes et passer à la chaîne suivante
-                    if(nextP == 1){
-                        break;
-                    }    
+                    
+                    
+                    /*-------------------------PROGRAMMES DU SOIR----------------------*/
+                    
+                    var dateJourS = new Date();
+
+                    var dateSoir = new Date(dateJourS.getFullYear(), dateJourS.getMonth(), dateJourS.getDate(), 20, 50,0);
+                    
+                    var programmeDeb = programmes[j].getAttribute("start");
+                    var datestart = new Date(parseInt(programmeDeb.substring(0,4)), (parseInt(programmeDeb.substring(4,6))) - 1,
+                            parseInt(programmeDeb.substring(6,8)), parseInt(programmeDeb.substring(8,10)), 
+                          (programmeDeb.substring(10,12)), 0);
+                    
+                 // Pour la comparaison, on convertit cette date en millisecondes
+                    datestart = datestart.getTime();
+                    
+                    dateSoir = dateSoir.getTime();
+                                        
+                    if((programmeId == channelId) && (new Number(dateSoir) <= new Number(datestart))){
+                        var programmeStartS = programmes[j].getAttribute("start");
+                           var debutS = "Le " + programmeStartS.substring(6,8) + "/" + 
+                           programmeStartS.substring(4,6) + "/" + 
+                           programmeStartS.substring(0,4) + " a " + 
+                           programmeStartS.substring(8,10) + "h" + 
+                           programmeStartS.substring(10,12);
+                           
+                       var programmeTitreS = programmes[j].getElementsByTagName("title")[0].textContent;
+                       
+                       //On teste la présence du sous titre                        
+                       var programmeSousTitreS = null;
+                       try{
+                           programmeSousTitreS = "("+programmes[j].getElementsByTagName("sub-title")[0].textContent+")";
+                       }
+                       catch(exceptiondesc){
+                           //Si la balise sous titre est absente, on met null pour ne pas bloquer l'exécution du code
+                           programmeSousTitreS = null;
+                       }
+
+                       
+                       var programmeDescS, programmeDirecteurS, programmeCreditsS, programmeActeursS, acteursS, programmeDateS, programmeTypeS = null;
+                       
+                        //On teste la présence d'une description
+                        try{
+                            programmeDescS = programmes[j].getElementsByTagName("desc")[0].textContent;
+                        }
+                        catch(exceptiondesc){
+                            //Si la balise description est absente, on informe l'utilisateur
+                            programmeDescS = "Pas de description";
+                        }
+                        
+                      //informations complémetaires
+                        programmeTypeS = programmes[j].getElementsByTagName("category")[0].textContent;
+                        programmeCreditsS = programmes[j].getElementsByTagName("credits")[0];
+                        
+                        if(programmeTypeS ==  'Documentaire' || programmeTypeS == 'Feuilleton' ||
+                        		programmeTypeS == 'Film' || programmeTypeS == 'Téléfilm' ||
+                        		programmeTypeS == 'Série'){
+                        	
+                        	try{
+                                programmeDirecteurS = programmeCreditsS.getElementsByTagName("director")[0].textContent;
+                                programmeActeursS = programmeCreditsS.getElementsByTagName("actor");
+                                
+                                for(var x = 0; x < programmeActeursS.length; x++){
+                                    acteurs += programmeActeursS[x].textContent + ", ";
+
+                                }
+
+                            }
+                            catch(exceptiondesc){
+                                //Si cette balise est absente, on informe l'utilisateur
+                            }
+                        }
+                        
+                        
+                        else if(programmeTypeS == 'Magazine' || programmeTypeS == 'Jeu' ||
+                        		programmeTypeS == 'Journal' || programmeTypeS == 'Divertissement'){
+                        	try{
+                                programmeDirecteurS = programmeCreditsS.getElementsByTagName("presenter")[0].textContent;
+
+                            }
+                            catch(exceptiondesc){
+                                //Si cette balise est absente, on informe l'utilisateur
+                            }
+                        }
+                        
+                    	try{
+                    		programmeDateS = programmes[j].getElementsByTagName("date")[0].textContent;
+
+                        }
+                        catch(exceptiondesc){
+                            //Si cette balise est absente, on informe l'utilisateur
+                        }
+                        
+                        
+                        
+                        
+                        var programmeLengthS = programmes[j].getElementsByTagName("length");
+                        var lenghtUnitS = programmeLengthS[0].getAttribute("units");
+                        
+                      //On se positionne sur la balise des prochains programmes dans le template
+                        var nextProgS = templateClone.getElementById('programListTonight').firstElementChild;
+                        var baliseCouranteS = null;
+                        
+                        var programmeStartNextS, lenghtUnitNextS, debutNextS, programmeLengthNextS;
+                        
+                        /* Ici, affichage des prochains programmes de la chaîne courante
+                         * La variable q permet de limiter l'affichage auxx 3 prochains programmes correspondant
+                         * à la chaîne.
+                         * On intialise une variable j au programme suivant et qui correspondant toujours à la
+                         * chaîne courante.
+                         */
+                        for(q = 0, p = j + 1; q < 3 && programmeId == programmes[p].getAttribute("channel"); q++, p++){
+                            
+                            //On se positionne sur la 1ère balise des next programmes
+                            baliseCouranteS = nextProgS.firstElementChild;
+
+                            //On attache le titre de l'émission suivante
+                            baliseCouranteS.textContent = programmes[p].getElementsByTagName("title")[0].textContent;
+                            
+                            //Passage au voisin suivant;
+                            baliseCouranteS = baliseCouranteS.nextElementSibling;
+                            
+                            //On essaye de charger le sous titre.
+                            try{
+                                baliseCouranteS.textContent = programmes[p].getElementsByTagName("sub-title")[0].textContent;
+                            }
+                            catch(exceptiondesc){
+                                //Si la balise sous titre est absente, on met null pour ne pas bloquer l'exécution du code
+                                baliseCouranteS.textContent = null;
+                            }
+                            
+                            //Voisin suivant
+                            baliseCouranteS = baliseCouranteS.nextElementSibling;
+                            
+                            //Formattage de la variable start pour le début de programme
+                            programmeStartNextS = programmes[p].getAttribute("start");
+                            debutNextS = "Le " + programmeStartNextS.substring(6,8) + "/" + 
+                            programmeStartNextS.substring(4,6) + "/" + 
+                            programmeStartNextS.substring(0,4) + " a " + 
+                            programmeStartNextS.substring(8,10) + "h" + 
+                            programmeStartNextS.substring(10,12);
+                            
+                            programmeLengthNextS = programmes[p].getElementsByTagName("length");
+                            lenghtUnitNextS = programmeLengthNextS[0].getAttribute("units");
+                            
+                            //On écrit dans cette balise les informations sur l'heure de début du programme
+                            baliseCouranteS.textContent = debutNextS + " (" + programmeLengthNextS[0].textContent + " " + lenghtUnitNext +")";
+                            
+                            //On passe à la balise "programJ" suivant
+                            nextProgS = nextProgS.nextElementSibling;
+                        }
+                        /* Cette chaîne contient déjà la liste des prochains programmes
+                         * Ceci permettra de sortir de la boucle pour passer à la chaîne suivante
+                         */
+                        break outer;
+                     }
+                    
+                    /*---------------------------------------------------------------------------*/
                     
                 }
                 
@@ -307,6 +439,52 @@ xhr.onreadystatechange = function() {
                 var type = dateSortie.nextElementSibling.nextElementSibling;
                 type.textContent = programmeType;
                 
+                /*-------------------------------------------------------------------------*/
+                
+                var tmpS =  templateClone.getElementById('tonightMainProgram').firstElementChild;
+                
+                /* Ici, on parcourt la balise mainProgram du template cloné pour insérer chaque données. */
+                
+                //Insertion du titre du programme
+               tmpS.textContent = programmeTitreS;
+               
+               //On passe au voisin suivant
+               tmpS = tmpS.nextElementSibling;
+                
+                //Insertion du sous-titre du programme
+                tmpS.textContent = programmeSousTitreS;
+                
+                //Voisin suivant
+                tmpS = tmpS.nextElementSibling;
+                    
+                //Insertion de la date, l'heure de début et la durée du programme
+                tmpS.textContent = debutS + " (" + programmeLengthS[0].textContent + " " + lenghtUnitS +")";
+                
+                //Insertion de la description du programme
+                //templateClone.getElementById('mainProgram').lastElementChild.textContent = programmeDesc;
+                
+                var infoComplementaireS = templateClone.getElementById('info_complementaire_tonight').firstElementChild;
+                // affichage de la description du programme
+                var descriptionS = infoComplementaireS.nextElementSibling;
+                descriptionS.textContent = programmeDescS;
+                
+                //affichage des participants
+                var directeurS = descriptionS.nextElementSibling.nextElementSibling.nextElementSibling;
+                directeurS.textContent = programmeDirecteurS;
+                
+                //affichage des acteurs
+                var actorsS = directeurS.nextElementSibling.nextElementSibling;
+                actorsS.textContent = acteursS;
+                
+                //affichage date de sortie du programme
+                var dateSortieS = actorsS.nextElementSibling.nextElementSibling;
+                dateSortieS.textContent = programmeDateS;
+                
+                //affichage du type du programme
+                var typeS = dateSortieS.nextElementSibling.nextElementSibling;
+                typeS.textContent = programmeTypeS;
+                
+                /*------------------------------------------------------------------------------*/
                
                 
                 //On rattache notre template à jour à la divB en fonction du numéro de la chaîne.
