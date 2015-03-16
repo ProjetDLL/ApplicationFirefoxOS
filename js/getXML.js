@@ -45,6 +45,24 @@ xhr.onreadystatechange = function() {
                 //On insère le nom de la chaîne dans notre template
                 templateClone.getElementById('channelName').textContent = channelName;
                 
+                //On récupère la liste d'accès rapide
+                
+                //ul
+                var listeAccesRapide = document.getElementById('accesRapide');
+                //li
+                var itemListeAccesRapide = document.createElement('li');
+                //h1
+                var linkItemListeAccesRapide = document.createElement('h1');
+                linkItemListeAccesRapide.setAttribute("id", "h"+i);
+                linkItemListeAccesRapide.textContent = channelName;
+                
+                
+                                
+                
+                
+                itemListeAccesRapide.appendChild(linkItemListeAccesRapide);
+                listeAccesRapide.appendChild(itemListeAccesRapide);
+                
                 //On récupère le contenu des balises programme
                 var programmes = xhr.responseXML.getElementsByTagName("programme");
                 
@@ -104,6 +122,30 @@ xhr.onreadystatechange = function() {
                             //Si la balise description est absente, on informe l'utilisateur
                             programmeDesc = "Pas de description";
                         }
+                       /* 
+                      //------------ MENU SELECTION RAPIDE DES CHAINES-------------
+                      
+                      	//récuperation de la div contenant la liste de séléction
+                      	  var divListprog = document.getElementById("listProgramme");
+                      	  
+                      	//récuperation de la liste ou inserer les éléments
+                      	  var ulListProg =  divListprog.getElementsByTagName("ul"); 
+                      	  
+                      	//Création du li
+                      	  var ilListProg = document.createElement("li");
+                      	  
+                      	//Création du a
+                      	 var aListProg = document.createElement("a");
+                      	 
+                      	//affectation d'un lien au a
+                      	  aListProg.setAttribute("href", "#id");
+                      	  
+                      	//Affectation du li au ul
+                      	  ulListProg.appendChil( "ilListProg");
+                      	  
+                      	                     
+                      //-----------------------------------------------------------
+                      */
                         
                       //informations complémetaires
                         programmeType = programmes[j].getElementsByTagName("category")[0].textContent;
@@ -298,6 +340,46 @@ xhr.onreadystatechange = function() {
              document.getElementsByClassName("info_complementaire")[i].addEventListener("dblclick", function(){this.style.height = "115px";}, false);
              
         }
+        
+        
+        	
+        	document.getElementById("h0").addEventListener("click", function(){mySwipe.slide(0, 300); document.getElementById('listeProgramme').style.display = "none";}, false);
+        	 
+        	document.getElementById("h1").addEventListener("click", function(){mySwipe.slide(1, 300); document.getElementById('listeProgramme').style.display = "none";}, false);
+        	
+        	document.getElementById("h2").addEventListener("click", function(){mySwipe.slide(2, 300); document.getElementById('listeProgramme').style.display = "none";}, false);
+        	
+        	document.getElementById("h3").addEventListener("click", function(){mySwipe.slide(3, 300); document.getElementById('listeProgramme').style.display = "none";}, false);
+        	
+        	document.getElementById("h4").addEventListener("click", function(){mySwipe.slide(4, 300); document.getElementById('listeProgramme').style.display = "none";}, false);
+        	
+        	document.getElementById("h5").addEventListener("click", function(){mySwipe.slide(5, 300); document.getElementById('listeProgramme').style.display = "none";}, false);
+        	
+        	document.getElementById("h6").addEventListener("click", function(){mySwipe.slide(6, 300); document.getElementById('listeProgramme').style.display = "none";}, false);
+        	
+        	document.getElementById("h7").addEventListener("click", function(){mySwipe.slide(7, 300); document.getElementById('listeProgramme').style.display = "none";}, false);
+        	
+        	document.getElementById("h8").addEventListener("click", function(){mySwipe.slide(8, 300); document.getElementById('listeProgramme').style.display = "none";}, false);
+        	
+        	document.getElementById("h9").addEventListener("click", function(){mySwipe.slide(9, 300); document.getElementById('listeProgramme').style.display = "none";}, false);
+        	
+        	document.getElementById("h10").addEventListener("click", function(){mySwipe.slide(10, 300); document.getElementById('listeProgramme').style.display = "none";}, false);
+        	
+        	document.getElementById("h11").addEventListener("click", function(){mySwipe.slide(11, 300); document.getElementById('listeProgramme').style.display = "none";}, false);
+        	
+        	document.getElementById("h12").addEventListener("click", function(){mySwipe.slide(12, 300); document.getElementById('listeProgramme').style.display = "none";}, false);
+        	
+        	document.getElementById("h13").addEventListener("click", function(){mySwipe.slide(13, 300); document.getElementById('listeProgramme').style.display = "none";}, false);
+        	
+        	document.getElementById("h14").addEventListener("click", function(){mySwipe.slide(14, 300); document.getElementById('listeProgramme').style.display = "none";}, false);
+        	
+        	document.getElementById("h15").addEventListener("click", function(){mySwipe.slide(15, 300); document.getElementById('listeProgramme').style.display = "none";}, false);
+        	
+        	document.getElementById("h16").addEventListener("click", function(){mySwipe.slide(16, 300); document.getElementById('listeProgramme').style.display = "none";}, false);
+        	
+        	document.getElementById("h17").addEventListener("click", function(){mySwipe.slide(17, 300); document.getElementById('listeProgramme').style.display = "none";}, false); 
+        
+        
        /* 
         for(var j = 0; j < document.getElementsByClassName('now').length; j++){
             
@@ -309,6 +391,10 @@ xhr.onreadystatechange = function() {
         }
         
         */
+        
+        //appTitle.addEventListener("click", mySwipe.slide(16, 300), false);
+        
+        //mySwipe.slide(4, 300);
         
         
 
