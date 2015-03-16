@@ -504,10 +504,8 @@ xhr.onreadystatechange = function() {
    }    
     
  
-        document.getElementById('listIcon').addEventListener("click", function(){document.getElementById('listeProgramme').style.display = "block";}, false);
-        document.getElementById('closeIcon').addEventListener("click", function(){document.getElementById('listeProgramme').style.display = "none";}, false);
-        document.getElementById('splashScreen').style.display = 'none';
-        //document.getElementById('splashScreen').style.zindex = '0'; //test
+        document.getElementById('listIcon').addEventListener("click", function(){document.getElementById('listeProgramme').style.display = "block"; document.getElementsByTagName('body')[0].style.overflowY = "hidden";}, false);
+        document.getElementById('closeIcon').addEventListener("click", function(){document.getElementById('listeProgramme').style.display = "none"; document.getElementsByTagName('body')[0].style.overflowY = "";}, false);
   
         //Liste de sélection des chaînes
         //document.getElementById('listeProgramme').style.display = 'none';
@@ -521,54 +519,564 @@ xhr.onreadystatechange = function() {
         
         
         	
-        	document.getElementById("h0").addEventListener("click", function(){mySwipe.slide(0, 300); document.getElementById('listeProgramme').style.display = "none";}, false);
+        	document.getElementById("h0").addEventListener("click", function(){mySwipe.slide(0, 300); document.getElementById('listeProgramme').style.display = "none"; document.getElementsByTagName('body')[0].style.overflowY = ""}, false);
         	 
-        	document.getElementById("h1").addEventListener("click", function(){mySwipe.slide(1, 300); document.getElementById('listeProgramme').style.display = "none";}, false);
+        	document.getElementById("h1").addEventListener("click", function(){mySwipe.slide(1, 300); document.getElementById('listeProgramme').style.display = "none"; document.getElementsByTagName('body')[0].style.overflowY = ""}, false);
         	
-        	document.getElementById("h2").addEventListener("click", function(){mySwipe.slide(2, 300); document.getElementById('listeProgramme').style.display = "none";}, false);
+        	document.getElementById("h2").addEventListener("click", function(){mySwipe.slide(2, 300); document.getElementById('listeProgramme').style.display = "none"; document.getElementsByTagName('body')[0].style.overflowY = ""}, false);
         	
-        	document.getElementById("h3").addEventListener("click", function(){mySwipe.slide(3, 300); document.getElementById('listeProgramme').style.display = "none";}, false);
+        	document.getElementById("h3").addEventListener("click", function(){mySwipe.slide(3, 300); document.getElementById('listeProgramme').style.display = "none"; document.getElementsByTagName('body')[0].style.overflowY = ""}, false);
         	
-        	document.getElementById("h4").addEventListener("click", function(){mySwipe.slide(4, 300); document.getElementById('listeProgramme').style.display = "none";}, false);
+        	document.getElementById("h4").addEventListener("click", function(){mySwipe.slide(4, 300); document.getElementById('listeProgramme').style.display = "none"; document.getElementsByTagName('body')[0].style.overflowY = ""}, false);
         	
-        	document.getElementById("h5").addEventListener("click", function(){mySwipe.slide(5, 300); document.getElementById('listeProgramme').style.display = "none";}, false);
+        	document.getElementById("h5").addEventListener("click", function(){mySwipe.slide(5, 300); document.getElementById('listeProgramme').style.display = "none"; document.getElementsByTagName('body')[0].style.overflowY = ""}, false);
         	
-        	document.getElementById("h6").addEventListener("click", function(){mySwipe.slide(6, 300); document.getElementById('listeProgramme').style.display = "none";}, false);
+        	document.getElementById("h6").addEventListener("click", function(){mySwipe.slide(6, 300); document.getElementById('listeProgramme').style.display = "none"; document.getElementsByTagName('body')[0].style.overflowY = ""}, false);
         	
-        	document.getElementById("h7").addEventListener("click", function(){mySwipe.slide(7, 300); document.getElementById('listeProgramme').style.display = "none";}, false);
+        	document.getElementById("h7").addEventListener("click", function(){mySwipe.slide(7, 300); document.getElementById('listeProgramme').style.display = "none"; document.getElementsByTagName('body')[0].style.overflowY = ""}, false);
         	
-        	document.getElementById("h8").addEventListener("click", function(){mySwipe.slide(8, 300); document.getElementById('listeProgramme').style.display = "none";}, false);
+        	document.getElementById("h8").addEventListener("click", function(){mySwipe.slide(8, 300); document.getElementById('listeProgramme').style.display = "none"; document.getElementsByTagName('body')[0].style.overflowY = ""}, false);
         	
-        	document.getElementById("h9").addEventListener("click", function(){mySwipe.slide(9, 300); document.getElementById('listeProgramme').style.display = "none";}, false);
+        	document.getElementById("h9").addEventListener("click", function(){mySwipe.slide(9, 300); document.getElementById('listeProgramme').style.display = "none"; document.getElementsByTagName('body')[0].style.overflowY = ""}, false);
         	
-        	document.getElementById("h10").addEventListener("click", function(){mySwipe.slide(10, 300); document.getElementById('listeProgramme').style.display = "none";}, false);
+        	document.getElementById("h10").addEventListener("click", function(){mySwipe.slide(10, 300); document.getElementById('listeProgramme').style.display = "none"; document.getElementsByTagName('body')[0].style.overflowY = ""}, false);
         	
-        	document.getElementById("h11").addEventListener("click", function(){mySwipe.slide(11, 300); document.getElementById('listeProgramme').style.display = "none";}, false);
+        	document.getElementById("h11").addEventListener("click", function(){mySwipe.slide(11, 300); document.getElementById('listeProgramme').style.display = "none"; document.getElementsByTagName('body')[0].style.overflowY = ""}, false);
         	
-        	document.getElementById("h12").addEventListener("click", function(){mySwipe.slide(12, 300); document.getElementById('listeProgramme').style.display = "none";}, false);
+        	document.getElementById("h12").addEventListener("click", function(){mySwipe.slide(12, 300); document.getElementById('listeProgramme').style.display = "none"; document.getElementsByTagName('body')[0].style.overflowY = ""}, false);
         	
-        	document.getElementById("h13").addEventListener("click", function(){mySwipe.slide(13, 300); document.getElementById('listeProgramme').style.display = "none";}, false);
+        	document.getElementById("h13").addEventListener("click", function(){mySwipe.slide(13, 300); document.getElementById('listeProgramme').style.display = "none"; document.getElementsByTagName('body')[0].style.overflowY = ""}, false);
         	
-        	document.getElementById("h14").addEventListener("click", function(){mySwipe.slide(14, 300); document.getElementById('listeProgramme').style.display = "none";}, false);
+        	document.getElementById("h14").addEventListener("click", function(){mySwipe.slide(14, 300); document.getElementById('listeProgramme').style.display = "none"; document.getElementsByTagName('body')[0].style.overflowY = ""}, false);
         	
-        	document.getElementById("h15").addEventListener("click", function(){mySwipe.slide(15, 300); document.getElementById('listeProgramme').style.display = "none";}, false);
+        	document.getElementById("h15").addEventListener("click", function(){mySwipe.slide(15, 300); document.getElementById('listeProgramme').style.display = "none"; document.getElementsByTagName('body')[0].style.overflowY = ""}, false);
         	
-        	document.getElementById("h16").addEventListener("click", function(){mySwipe.slide(16, 300); document.getElementById('listeProgramme').style.display = "none";}, false);
+        	document.getElementById("h16").addEventListener("click", function(){mySwipe.slide(16, 300); document.getElementById('listeProgramme').style.display = "none"; document.getElementsByTagName('body')[0].style.overflowY = ""}, false);
         	
-        	document.getElementById("h17").addEventListener("click", function(){mySwipe.slide(17, 300); document.getElementById('listeProgramme').style.display = "none";}, false); 
+        	document.getElementById("h17").addEventListener("click", function(){mySwipe.slide(17, 300); document.getElementById('listeProgramme').style.display = "none"; document.getElementsByTagName('body')[0].style.overflowY = ""}, false); 
         
         
-       /* 
-        for(var j = 0; j < document.getElementsByClassName('now').length; j++){
+        var tonightMainProgram = document.getElementsByClassName('tonightMainProgram');
+        var tonightNextPrograms = document.getElementsByClassName('tonightNextPrograms');
+        
+        var mainProgram = document.getElementsByClassName('mainProgram');
+        var nextPrograms = document.getElementsByClassName('nextPrograms');
+        
+        
+        //listeners pour afficher les programmes du soir
             
-            document.getElementsByClassName("now")[j].addEventListener("click", function(){
-                document.getElementById('tonightMainProgram').style.display = 'block';
-                document.getElementById('mainProgram').style.display = 'none';
+            document.getElementsByClassName("tonight")[0].addEventListener("click", function(){
+                
+                document.getElementsByClassName('tonight')[0].style.textShadow = "0px 0px 10px white";
+                document.getElementsByClassName('now')[0].style.textShadow = "0px 0px 0px white";
+                
+                tonightMainProgram[0].style.display = 'block';
+                tonightNextPrograms[0].style.display = 'block';
+                document.getElementsByClassName('tonightIconArrow')[0].style.display = 'block';
+                
+                mainProgram[0].style.display = 'none';
+                nextPrograms[0].style.display = 'none';
+                document.getElementsByClassName('iconArrow')[0].style.display = 'none';
             }, false);
             
-        }
+            document.getElementsByClassName("tonight")[1].addEventListener("click", function(){
+                
+                document.getElementsByClassName('tonight')[1].style.textShadow = "0px 0px 10px white";
+                document.getElementsByClassName('now')[1].style.textShadow = "0px 0px 0px white";
+                
+                tonightMainProgram[1].style.display = 'block';
+                tonightNextPrograms[1].style.display = 'block';
+                document.getElementsByClassName('tonightIconArrow')[1].style.display = 'block';
+                
+                mainProgram[1].style.display = 'none';
+                nextPrograms[1].style.display = 'none';
+                document.getElementsByClassName('iconArrow')[1].style.display = 'none';
+            }, false);
+            
+            document.getElementsByClassName("tonight")[2].addEventListener("click", function(){
+                
+                document.getElementsByClassName('tonight')[2].style.textShadow = "0px 0px 10px white";
+                document.getElementsByClassName('now')[2].style.textShadow = "0px 0px 0px white";
+                
+                tonightMainProgram[2].style.display = 'block';
+                tonightNextPrograms[2].style.display = 'block';
+                document.getElementsByClassName('tonightIconArrow')[2].style.display = 'block';
+                
+                mainProgram[2].style.display = 'none';
+                nextPrograms[2].style.display = 'none';
+                document.getElementsByClassName('iconArrow')[2].style.display = 'none';
+            }, false);
+            
+            document.getElementsByClassName("tonight")[3].addEventListener("click", function(){
+                
+                document.getElementsByClassName('tonight')[3].style.textShadow = "0px 0px 10px white";
+                document.getElementsByClassName('now')[3].style.textShadow = "0px 0px 0px white";
+                
+                tonightMainProgram[3].style.display = 'block';
+                tonightNextPrograms[3].style.display = 'block';
+                document.getElementsByClassName('tonightIconArrow')[3].style.display = 'block';
+                
+                mainProgram[3].style.display = 'none';
+                nextPrograms[3].style.display = 'none';
+                document.getElementsByClassName('iconArrow')[3].style.display = 'none';
+            }, false);
+            
+            document.getElementsByClassName("tonight")[4].addEventListener("click", function(){
+                
+                document.getElementsByClassName('tonight')[4].style.textShadow = "0px 0px 10px white";
+                document.getElementsByClassName('now')[4].style.textShadow = "0px 0px 0px white";
+                
+                tonightMainProgram[4].style.display = 'block';
+                tonightNextPrograms[4].style.display = 'block';
+                document.getElementsByClassName('tonightIconArrow')[4].style.display = 'block';
+                
+                mainProgram[4].style.display = 'none';
+                nextPrograms[4].style.display = 'none';
+                document.getElementsByClassName('iconArrow')[4].style.display = 'none';
+            }, false);
+            
+            document.getElementsByClassName("tonight")[5].addEventListener("click", function(){
+                
+                document.getElementsByClassName('tonight')[5].style.textShadow = "0px 0px 10px white";
+                document.getElementsByClassName('now')[5].style.textShadow = "0px 0px 0px white";
+                
+                tonightMainProgram[5].style.display = 'block';
+                tonightNextPrograms[5].style.display = 'block';
+                document.getElementsByClassName('tonightIconArrow')[5].style.display = 'block';
+                
+                mainProgram[5].style.display = 'none';
+                nextPrograms[5].style.display = 'none';
+                document.getElementsByClassName('iconArrow')[5].style.display = 'none';
+            }, false);
+            
+            document.getElementsByClassName("tonight")[6].addEventListener("click", function(){
+                
+                document.getElementsByClassName('tonight')[6].style.textShadow = "0px 0px 10px white";
+                document.getElementsByClassName('now')[6].style.textShadow = "0px 0px 0px white";
+                
+                tonightMainProgram[6].style.display = 'block';
+                tonightNextPrograms[6].style.display = 'block';
+                document.getElementsByClassName('tonightIconArrow')[6].style.display = 'block';
+                
+                mainProgram[6].style.display = 'none';
+                nextPrograms[6].style.display = 'none';
+                document.getElementsByClassName('iconArrow')[6].style.display = 'none';
+            }, false);
+            
+            document.getElementsByClassName("tonight")[7].addEventListener("click", function(){
+                
+                document.getElementsByClassName('tonight')[7].style.textShadow = "0px 0px 10px white";
+                document.getElementsByClassName('now')[7].style.textShadow = "0px 0px 0px white";
+                
+                tonightMainProgram[7].style.display = 'block';
+                tonightNextPrograms[7].style.display = 'block';
+                document.getElementsByClassName('tonightIconArrow')[7].style.display = 'block';
+                
+                mainProgram[7].style.display = 'none';
+                nextPrograms[7].style.display = 'none';
+                document.getElementsByClassName('iconArrow')[7].style.display = 'none';
+            }, false);
+            
+            document.getElementsByClassName("tonight")[8].addEventListener("click", function(){
+                
+                document.getElementsByClassName('tonight')[8].style.textShadow = "0px 0px 10px white";
+                document.getElementsByClassName('now')[8].style.textShadow = "0px 0px 0px white";
+                
+                tonightMainProgram[8].style.display = 'block';
+                tonightNextPrograms[8].style.display = 'block';
+                document.getElementsByClassName('tonightIconArrow')[8].style.display = 'block';
+                
+                mainProgram[8].style.display = 'none';
+                nextPrograms[8].style.display = 'none';
+                document.getElementsByClassName('iconArrow')[8].style.display = 'none';
+            }, false);
+            
+            document.getElementsByClassName("tonight")[9].addEventListener("click", function(){
+                
+                document.getElementsByClassName('tonight')[9].style.textShadow = "0px 0px 10px white";
+                document.getElementsByClassName('now')[9].style.textShadow = "0px 0px 0px white";
+                
+                tonightMainProgram[9].style.display = 'block';
+                tonightNextPrograms[9].style.display = 'block';
+                document.getElementsByClassName('tonightIconArrow')[9].style.display = 'block';
+                
+                mainProgram[9].style.display = 'none';
+                nextPrograms[9].style.display = 'none';
+                document.getElementsByClassName('iconArrow')[9].style.display = 'none';
+            }, false);
+            
+            document.getElementsByClassName("tonight")[10].addEventListener("click", function(){
+                
+                document.getElementsByClassName('tonight')[10].style.textShadow = "0px 0px 10px white";
+                document.getElementsByClassName('now')[10].style.textShadow = "0px 0px 0px white";
+                
+                tonightMainProgram[10].style.display = 'block';
+                tonightNextPrograms[10].style.display = 'block';
+                document.getElementsByClassName('tonightIconArrow')[10].style.display = 'block';
+                
+                mainProgram[10].style.display = 'none';
+                nextPrograms[10].style.display = 'none';
+                document.getElementsByClassName('iconArrow')[10].style.display = 'none';
+            }, false);
+            
+            document.getElementsByClassName("tonight")[11].addEventListener("click", function(){
+                
+                document.getElementsByClassName('tonight')[11].style.textShadow = "0px 0px 0px white";
+                
+                tonightMainProgram[11].style.display = 'block';
+                tonightNextPrograms[11].style.display = 'block';
+                document.getElementsByClassName('tonightIconArrow')[11].style.display = 'block';
+                
+                mainProgram[11].style.display = 'none';
+                nextPrograms[11].style.display = 'none';
+                document.getElementsByClassName('iconArrow')[11].style.display = 'none';
+            }, false);
+            
+            document.getElementsByClassName("tonight")[12].addEventListener("click", function(){
+                
+                document.getElementsByClassName('tonight')[12].style.textShadow = "0px 0px 10px white";
+                document.getElementsByClassName('now')[12].style.textShadow = "0px 0px 0px white";
+                
+                tonightMainProgram[12].style.display = 'block';
+                tonightNextPrograms[12].style.display = 'block';
+                document.getElementsByClassName('tonightIconArrow')[12].style.display = 'block';
+                
+                mainProgram[12].style.display = 'none';
+                nextPrograms[12].style.display = 'none';
+                document.getElementsByClassName('iconArrow')[12].style.display = 'none';
+            }, false);
+            
+            document.getElementsByClassName("tonight")[13].addEventListener("click", function(){
+                
+                document.getElementsByClassName('tonight')[13].style.textShadow = "0px 0px 10px white";
+                document.getElementsByClassName('now')[13].style.textShadow = "0px 0px 0px white";
+                
+                tonightMainProgram[13].style.display = 'block';
+                tonightNextPrograms[13].style.display = 'block';
+                document.getElementsByClassName('tonightIconArrow')[13].style.display = 'block';
+                
+                mainProgram[13].style.display = 'none';
+                nextPrograms[13].style.display = 'none';
+                document.getElementsByClassName('iconArrow')[13].style.display = 'none';
+            }, false);
+            
+            document.getElementsByClassName("tonight")[14].addEventListener("click", function(){
+                
+                document.getElementsByClassName('tonight')[14].style.textShadow = "0px 0px 10px white";
+                document.getElementsByClassName('now')[14].style.textShadow = "0px 0px 0px white";
+                
+                tonightMainProgram[14].style.display = 'block';
+                tonightNextPrograms[14].style.display = 'block';
+                document.getElementsByClassName('tonightIconArrow')[14].style.display = 'block';
+                
+                mainProgram[14].style.display = 'none';
+                nextPrograms[14].style.display = 'none';
+                document.getElementsByClassName('iconArrow')[14].style.display = 'none';
+            }, false);
+            
+            document.getElementsByClassName("tonight")[15].addEventListener("click", function(){
+                
+                document.getElementsByClassName('tonight')[15].style.textShadow = "0px 0px 10px white";
+                document.getElementsByClassName('now')[15].style.textShadow = "0px 0px 0px white";
+                
+                tonightMainProgram[15].style.display = 'block';
+                tonightNextPrograms[15].style.display = 'block';
+                document.getElementsByClassName('tonightIconArrow')[15].style.display = 'block';
+                
+                mainProgram[15].style.display = 'none';
+                nextPrograms[15].style.display = 'none';
+                document.getElementsByClassName('iconArrow')[15].style.display = 'none';
+            }, false);
+            
+            document.getElementsByClassName("tonight")[16].addEventListener("click", function(){
+                
+                document.getElementsByClassName('tonight')[16].style.textShadow = "0px 0px 10px white";
+                document.getElementsByClassName('now')[16].style.textShadow = "0px 0px 0px white";
+                
+                tonightMainProgram[16].style.display = 'block';
+                tonightNextPrograms[16].style.display = 'block';
+                document.getElementsByClassName('tonightIconArrow')[16].style.display = 'block';
+                
+                mainProgram[16].style.display = 'none';
+                nextPrograms[16].style.display = 'none';
+                document.getElementsByClassName('iconArrow')[16].style.display = 'none';
+            }, false);
+            
+            document.getElementsByClassName("tonight")[17].addEventListener("click", function(){
+                
+                document.getElementsByClassName('tonight')[17].style.textShadow = "0px 0px 10px white";
+                document.getElementsByClassName('now')[17].style.textShadow = "0px 0px 0px white";
+                
+                tonightMainProgram[17].style.display = 'block';
+                tonightNextPrograms[17].style.display = 'block';
+                document.getElementsByClassName('tonightIconArrow')[17].style.display = 'block';
+                
+                mainProgram[17].style.display = 'none';
+                nextPrograms[17].style.display = 'none';
+                document.getElementsByClassName('iconArrow')[17].style.display = 'none';
+            }, false);
+            
+            
+            //listeners pour afficher les programmes en cours
+            
+            document.getElementsByClassName("now")[0].addEventListener("click", function(){
+                
+                document.getElementsByClassName('now')[0].style.textShadow = "0px 0px 10px white";
+                document.getElementsByClassName('tonight')[0].style.textShadow = "0px 0px 0px white";
+                
+                mainProgram[0].style.display = 'block';
+                nextPrograms[0].style.display = 'block';
+                document.getElementsByClassName('iconArrow')[0].style.display = 'block';
+                
+                tonightMainProgram[0].style.display = 'none';
+                tonightNextPrograms[0].style.display = 'none';
+                document.getElementsByClassName('tonightIconArrow')[0].style.display = 'none';
+            }, false);
+            
+            document.getElementsByClassName("now")[1].addEventListener("click", function(){
+                
+                document.getElementsByClassName('now')[1].style.textShadow = "0px 0px 10px white";
+                document.getElementsByClassName('tonight')[1].style.textShadow = "0px 0px 0px white";
+                
+                mainProgram[1].style.display = 'block';
+                nextPrograms[1].style.display = 'block';
+                document.getElementsByClassName('iconArrow')[1].style.display = 'block';
+                
+                tonightMainProgram[1].style.display = 'none';
+                tonightNextPrograms[1].style.display = 'none';
+                document.getElementsByClassName('tonightIconArrow')[1].style.display = 'none';
+            }, false);
+            
+            document.getElementsByClassName("now")[2].addEventListener("click", function(){
+                
+                document.getElementsByClassName('now')[2].style.textShadow = "0px 0px 10px white";
+                document.getElementsByClassName('tonight')[2].style.textShadow = "0px 0px 0px white";
+                
+                mainProgram[2].style.display = 'block';
+                nextPrograms[2].style.display = 'block';
+                document.getElementsByClassName('iconArrow')[2].style.display = 'block';
+                
+                tonightMainProgram[2].style.display = 'none';
+                tonightNextPrograms[2].style.display = 'none';
+                document.getElementsByClassName('tonightIconArrow')[2].style.display = 'none';
+            }, false);
+            
+            document.getElementsByClassName("now")[3].addEventListener("click", function(){
+                
+                document.getElementsByClassName('now')[3].style.textShadow = "0px 0px 10px white";
+                document.getElementsByClassName('tonight')[3].style.textShadow = "0px 0px 0px white";
+                
+                mainProgram[3].style.display = 'block';
+                nextPrograms[3].style.display = 'block';
+                document.getElementsByClassName('iconArrow')[3].style.display = 'block';
+                
+                tonightMainProgram[3].style.display = 'none';
+                tonightNextPrograms[3].style.display = 'none';
+                document.getElementsByClassName('tonightIconArrow')[3].style.display = 'none';
+            }, false);
+            
+            document.getElementsByClassName("now")[4].addEventListener("click", function(){
+                
+                document.getElementsByClassName('now')[4].style.textShadow = "0px 0px 10px white";
+                document.getElementsByClassName('tonight')[4].style.textShadow = "0px 0px 0px white";
+                
+                mainProgram[4].style.display = 'block';
+                nextPrograms[4].style.display = 'block';
+                document.getElementsByClassName('iconArrow')[4].style.display = 'block';
+                
+                tonightMainProgram[4].style.display = 'none';
+                tonightNextPrograms[4].style.display = 'none';
+                document.getElementsByClassName('tonightIconArrow')[4].style.display = 'none';
+            }, false);
+            
+            document.getElementsByClassName("now")[5].addEventListener("click", function(){
+                
+                document.getElementsByClassName('now')[5].style.textShadow = "0px 0px 10px white";
+                document.getElementsByClassName('tonight')[5].style.textShadow = "0px 0px 0px white";
+                
+                mainProgram[5].style.display = 'block';
+                nextPrograms[5].style.display = 'block';
+                document.getElementsByClassName('iconArrow')[5].style.display = 'block';
+                
+                tonightMainProgram[5].style.display = 'none';
+                tonightNextPrograms[5].style.display = 'none';
+                document.getElementsByClassName('tonightIconArrow')[5].style.display = 'none';
+            }, false);
+            
+            document.getElementsByClassName("now")[6].addEventListener("click", function(){
+                
+                document.getElementsByClassName('now')[6].style.textShadow = "0px 0px 10px white";
+                document.getElementsByClassName('tonight')[6].style.textShadow = "0px 0px 0px white";
+                
+                mainProgram[6].style.display = 'block';
+                nextPrograms[6].style.display = 'block';
+                document.getElementsByClassName('iconArrow')[6].style.display = 'block';
+                
+                tonightMainProgram[6].style.display = 'none';
+                tonightNextPrograms[6].style.display = 'none';
+                document.getElementsByClassName('tonightIconArrow')[6].style.display = 'none';
+            }, false);
+            
+            document.getElementsByClassName("now")[7].addEventListener("click", function(){
+                
+                document.getElementsByClassName('now')[7].style.textShadow = "0px 0px 10px white";
+                document.getElementsByClassName('tonight')[7].style.textShadow = "0px 0px 0px white";
+                
+                mainProgram[7].style.display = 'block';
+                nextPrograms[7].style.display = 'block';
+                document.getElementsByClassName('iconArrow')[7].style.display = 'block';
+                
+                tonightMainProgram[7].style.display = 'none';
+                tonightNextPrograms[7].style.display = 'none';
+                document.getElementsByClassName('tonightIconArrow')[7].style.display = 'none';
+            }, false);
+            
+            document.getElementsByClassName("now")[8].addEventListener("click", function(){
+                
+                document.getElementsByClassName('now')[8].style.textShadow = "0px 0px 10px white";
+                document.getElementsByClassName('tonight')[8].style.textShadow = "0px 0px 0px white";
+                
+                mainProgram[8].style.display = 'block';
+                nextPrograms[8].style.display = 'block';
+                document.getElementsByClassName('iconArrow')[8].style.display = 'block';
+                
+                tonightMainProgram[8].style.display = 'none';
+                tonightNextPrograms[8].style.display = 'none';
+                document.getElementsByClassName('tonightIconArrow')[8].style.display = 'none';
+            }, false);
+            
+            document.getElementsByClassName("now")[9].addEventListener("click", function(){
+                
+                document.getElementsByClassName('now')[9].style.textShadow = "0px 0px 10px white";
+                document.getElementsByClassName('tonight')[9].style.textShadow = "0px 0px 0px white";
+                
+                mainProgram[9].style.display = 'block';
+                nextPrograms[9].style.display = 'block';
+                document.getElementsByClassName('iconArrow')[9].style.display = 'block';
+                
+                tonightMainProgram[9].style.display = 'none';
+                tonightNextPrograms[9].style.display = 'none';
+                document.getElementsByClassName('tonightIconArrow')[9].style.display = 'none';
+            }, false);
+            
+            document.getElementsByClassName("now")[10].addEventListener("click", function(){
+                
+                document.getElementsByClassName('now')[10].style.textShadow = "0px 0px 10px white";
+                document.getElementsByClassName('tonight')[10].style.textShadow = "0px 0px 0px white";
+                
+                mainProgram[10].style.display = 'block';
+                nextPrograms[10].style.display = 'block';
+                document.getElementsByClassName('iconArrow')[10].style.display = 'block';
+                
+                tonightMainProgram[10].style.display = 'none';
+                tonightNextPrograms[10].style.display = 'none';
+                document.getElementsByClassName('tonightIconArrow')[10].style.display = 'none';
+            }, false);
+            
+            document.getElementsByClassName("now")[11].addEventListener("click", function(){
+                
+                document.getElementsByClassName('now')[11].style.textShadow = "0px 0px 10px white";
+                document.getElementsByClassName('tonight')[11].style.textShadow = "0px 0px 0px white";
+                
+                mainProgram[11].style.display = 'block';
+                nextPrograms[11].style.display = 'block';
+                document.getElementsByClassName('iconArrow')[11].style.display = 'block';
+                
+                tonightMainProgram[11].style.display = 'none';
+                tonightNextPrograms[11].style.display = 'none';
+                document.getElementsByClassName('tonightIconArrow')[11].style.display = 'none';
+            }, false);
+            
+            document.getElementsByClassName("now")[12].addEventListener("click", function(){
+                
+                document.getElementsByClassName('now')[12].style.textShadow = "0px 0px 10px white";
+                document.getElementsByClassName('tonight')[12].style.textShadow = "0px 0px 0px white";
+                
+                mainProgram[12].style.display = 'block';
+                nextPrograms[12].style.display = 'block';
+                document.getElementsByClassName('iconArrow')[12].style.display = 'block';
+                
+                tonightMainProgram[12].style.display = 'none';
+                tonightNextPrograms[12].style.display = 'none';
+                document.getElementsByClassName('tonightIconArrow')[12].style.display = 'none';
+            }, false);
+            
+            document.getElementsByClassName("now")[13].addEventListener("click", function(){
+                
+                document.getElementsByClassName('now')[13].style.textShadow = "0px 0px 10px white";
+                document.getElementsByClassName('tonight')[13].style.textShadow = "0px 0px 0px white";
+                
+                mainProgram[13].style.display = 'block';
+                nextPrograms[13].style.display = 'block';
+                document.getElementsByClassName('iconArrow')[13].style.display = 'block';
+                
+                tonightMainProgram[13].style.display = 'none';
+                tonightNextPrograms[13].style.display = 'none';
+                document.getElementsByClassName('tonightIconArrow')[13].style.display = 'none';
+            }, false);
+            
+            document.getElementsByClassName("now")[14].addEventListener("click", function(){
+                
+                document.getElementsByClassName('now')[14].style.textShadow = "0px 0px 10px white";
+                document.getElementsByClassName('tonight')[14].style.textShadow = "0px 0px 0px white";
+                
+                mainProgram[14].style.display = 'block';
+                nextPrograms[14].style.display = 'block';
+                document.getElementsByClassName('iconArrow')[14].style.display = 'block';
+                
+                tonightMainProgram[14].style.display = 'none';
+                tonightNextPrograms[14].style.display = 'none';
+                document.getElementsByClassName('tonightIconArrow')[14].style.display = 'none';
+            }, false);
+            
+            document.getElementsByClassName("now")[15].addEventListener("click", function(){
+                
+                document.getElementsByClassName('now')[15].style.textShadow = "0px 0px 10px white";
+                document.getElementsByClassName('tonight')[15].style.textShadow = "0px 0px 0px white";
+                
+                mainProgram[15].style.display = 'block';
+                nextPrograms[15].style.display = 'block';
+                document.getElementsByClassName('iconArrow')[15].style.display = 'block';
+                
+                tonightMainProgram[15].style.display = 'none';
+                tonightNextPrograms[15].style.display = 'none';
+                document.getElementsByClassName('tonightIconArrow')[15].style.display = 'none';
+            }, false);
+            
+            document.getElementsByClassName("now")[16].addEventListener("click", function(){
+                
+                document.getElementsByClassName('now')[16].style.textShadow = "0px 0px 10px white";
+                document.getElementsByClassName('tonight')[16].style.textShadow = "0px 0px 0px white";
+                
+                mainProgram[16].style.display = 'block';
+                nextPrograms[16].style.display = 'block';
+                document.getElementsByClassName('iconArrow')[16].style.display = 'block';
+                
+                tonightMainProgram[16].style.display = 'none';
+                tonightNextPrograms[16].style.display = 'none';
+                document.getElementsByClassName('tonightIconArrow')[16].style.display = 'none';
+            }, false);
+            
+            document.getElementsByClassName("now")[17].addEventListener("click", function(){
+                
+                document.getElementsByClassName('now')[17].style.textShadow = "0px 0px 10px white";
+                document.getElementsByClassName('tonight')[17].style.textShadow = "0px 0px 0px white";
+                
+                mainProgram[17].style.display = 'block';
+                nextPrograms[17].style.display = 'block';
+                document.getElementsByClassName('iconArrow')[17].style.display = 'block';
+                
+                tonightMainProgram[17].style.display = 'none';
+                tonightNextPrograms[17].style.display = 'none';
+                document.getElementsByClassName('tonightIconArrow')[17].style.display = 'none';
+            }, false);
+            
+            
+            
+            
+
         
-        */
+        document.getElementById('splashScreen').style.display = 'none';
         
         //appTitle.addEventListener("click", mySwipe.slide(16, 300), false);
         

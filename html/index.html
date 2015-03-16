@@ -1,27 +1,166 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE html>
+<html>
+    <head>
+        <title>Programme TV</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/> 
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="theme-color" content="#1C2224">
+        
+        <link href='../css/style.css' rel='stylesheet'/>
+        <link href='../css/bootstrap.css' rel='stylesheet'/>
+    </head>
+
+    <body>
+        
+        <!-- Splash screnn-->
+        <div id="splashScreen" style="display: block">
+            <h1>Programme TV</h1>
+            <img id="loadingGif" src="../img/loading.gif"/>
+            <h3>Chargement ...</h3>
+        </div>
+        
+        
+                 <!-- Liste des programmes Ã  choisir -->
+        <div id="listeProgramme" style="display:none">
+           <img id ="closeIcon" src ="../img/icons/Close.png"/>
+           <ul id="accesRapide"> 
+               
+           </ul> 
+        </div>
+        
+        <header>
+            <h1 id="appTitle">Programme TV</h1>
+            <img id="listIcon" src="../img/icons/ic_list_white_24dp.png"/>
+        </header>        
+        
+
+        <div id='mySwipe' style='max-width:screen-width;margin:0 auto' class='swipe'>
+            
+          <div class='swipe-wrap'></div> <!--end swipe-wrap -->
+          
+        </div> <!--end mySwipe -->
+       
   
-  <head>
-    <title>Exemple</title>
-    <script type="text/javascript" src="../js/jquery.mobile-1.4.5.min.js"></script>
-    <script type="text/javascript" src="../js/jquery-2.1.3.min.js"></script>
-<<<<<<< Updated upstream
-    <script type="text/javascript" src="../js/hammer.min.js"></script>
-=======
+	<template id="structure">
+           
 
-    <script type="text/javascript" src="../js/hammer.min.js"></script>
+ 
+            <div id="channel">
+                <h1 id="channelName"></h1>
+                <ul id="temps">
+                    <li id="now" class="now" style="text-shadow: 0px 0px 10px white;">Maintenant</li>
+                    <li id="tonight" class="tonight" style="text-shadow: 0px 0px 0px white;">Ce soir</li>
+                </ul>
+            </div>
 
+                    <div id="mainProgram" class="mainProgram" style="display: block">
+                        <h3 id="title"></h3>
+                        <h3 id="subtitle"></h3>
+                        <h2 id="startANDduration"></h2>
+                        
+                        <!-- info complementaire -->
+                        <div id='info_complementaire' class='info_complementaire'>
+                            
+                             <h2>Description: </h2>
+                             <!-- <p id="description" onclick="test();" ondblclick="test2();">-->
+                             <p id="description">                    
+                            </p>
+                            
+                            <h3>Participants:</h3>
+                            <h2>Directeur:</h2>
+                                <p id="director"></p>
+                            <h2>Acteurs:</h2>
+                                <p id="acteurs"></p>
+                             <h2>Date:</h2>
+                                <p id="date"></p>
+                             <h2>Type programme:</h2>
+                                <p id="category"></p>                                                                                       
+                            
+                        </div>
+                        
+                    </div>
+                    <img id="iconArrow" class="iconArrow" src="../img/icons/arrow_down.png" style="display: block"/>
+                    <div id="nextPrograms" class="nextPrograms" style="display: block">
+                        <ul id="programList">
+                            <li id="program1">
+                              <h3 id="title">TITRE 1</h3>
+                              <h3 id="subtitle">SUB1</h3>
+                              <h3 id="startANDduration">le 17/02/2015 (50 minutes)</h3>  
+                            </li>
+                            <li id="program2">
+                              <h3 id="title">TITRE 2</h3>
+                              <h3 id="subtitle">SUB2</h3>
+                              <h3 id="startANDduration">le 17/02/2015 (50 minutes)</h3>  
+                            </li>
+                            <li id="program3">
+                              <h3 id="title">TITRE 2</h3>
+                              <h3 id="subtitle">SUB2</h3>
+                              <h3 id="startANDduration">le 17/02/2015 (50 minutes)</h3>    
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    
+                    <div id="tonightMainProgram" class="tonightMainProgram" style="display: none;">
+                        <h3 id="title"></h3>
+                        <h3 id="subtitle"></h3>
+                        <h2 id="startANDduration"></h2>
+                        
+                        <!-- info complementaire -->
+                        <div id='info_complementaire_tonight' class='info_complementaire'>
+                            
+                             <h2>Description: </h2>
+                             <!-- <p id="description" onclick="test();" ondblclick="test2();">-->
+                             <p id="description">                    
+                            </p>
+                            
+                            <h3>Participants:</h3>
+                            <h2>Directeur:</h2>
+                                <p id="director"></p>
+                            <h2>Acteurs:</h2>
+                                <p id="acteurs"></p>
+                             <h3>Date:</h3>
+                                <p id="date"></p>
+                             <h3>Type programme:</h3>
+                                <p id="category"></p>                                                                                       
+                            
+                        </div>
+                        
+                    </div>
+                    <img id="tonightIconArrow" class="tonightIconArrow" src="../img/icons/arrow_down.png" style="display: none"/>
+                    <div id="tonightNextPrograms" class="tonightNextPrograms" style="display: none;">
+                        <ul id="programListTonight">
+                            <li id="program1">
+                              <h3 id="title">TITRE 1</h3>
+                              <h3 id="subtitle">SUB1</h3>
+                              <h3 id="startANDduration">le 17/02/2015 (50 minutes)</h3>  
+                            </li>
+                            <li id="program2">
+                              <h3 id="title">TITRE 2</h3>
+                              <h3 id="subtitle">SUB2</h3>
+                              <h3 id="startANDduration">le 17/02/2015 (50 minutes)</h3>  
+                            </li>
+                            <li id="program3">
+                              <h3 id="title">TITRE 2</h3>
+                              <h3 id="subtitle">SUB2</h3>
+                              <h3 id="startANDduration">le 17/02/2015 (50 minutes)</h3>    
+                            </li>
+                        </ul>
+                    </div>
 
->>>>>>> Stashed changes
-    <script type="text/javascript" src="../js/getXML.js"></script>
-
-
+        </template>
+              
+        <script src='../js/swipe.js'></script>
+        <script src='../js/jquery-2.1.3.min.js'></script> 
+        
+        <script type="text/javascript" src="../js/getXML.js"></script>
+        <script src='../js/slideGesture.js'></script>
+        <script src='../js/scrollGesture.js'></script>
     
- </head>
-  
-   <body>
-       <h1>TEST</h1>
-       <div id="channel"></div>
-   </body>
+    </body>
+    
+    
+    
 </html>
-

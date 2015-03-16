@@ -68,7 +68,7 @@ ul, li{
     border-width: medium medium 0.5px;
     color: #FFF;
     list-style: none outside none;
-    padding-top: 15%;
+    padding-top: 5%;
     font-size: 25px;
 }
 
@@ -222,14 +222,27 @@ html, body {
     margin-left: 10px;
     color: #1C2224;
     overflow-y: hidden;
-
 }
+
+#info_complementaire_tonight{
+    width: 278px;
+    height: 115px;
+    margin-left: 10px;
+    color: #1C2224;
+    overflow-y: hidden;
+}
+
 
 #description{
     margin-left: 11%!important;
 }
 
 #iconArrow{
+    padding-left: 46%;
+    margin-top: 10px;
+}
+
+#tonightIconArrow{
     padding-left: 46%;
     margin-top: 10px;
 }
@@ -260,6 +273,36 @@ html, body {
 }
 
 #programList li #startANDduration{
+    font-size: 13px;
+}
+
+
+#programListTonight{
+    padding-top: 0px;
+    padding-bottom: 15px;
+}
+
+#programListTonight li{
+    padding-top: 20px;
+    padding-bottom: 15px;
+    border-style: none solid solid none;
+    border-color: -moz-use-text-color black black -moz-use-text-color;
+    border-width: medium 0.5px 0.5px medium;
+    width: 320px;
+    border-right: none;
+
+}
+
+#programListTonight li #title{
+    padding-top: 0px;
+    font-size: 20px;
+}
+
+#programListTonight li #subtitle{
+    font-size: 15px;
+}
+
+#programListTonight li #startANDduration{
     font-size: 13px;
 }
 
@@ -338,7 +381,7 @@ ul, li{
     border-width: medium medium 0.5px;
     color: #FFF;
     list-style: none outside none;
-    padding-top: 15%;
+    padding-top: 5%;
     font-size: 25px;
 }
 
@@ -513,7 +556,39 @@ html, body {
  	 margin-left : 66px; 
 }
 
+
+#info_complementaire_tonight{
+    width: 278px;
+    height: 115px;
+    margin-left: 10px;
+    color: #1C2224;
+    overflow-y: hidden;
+}
+
+#info_complementaire_tonight h2{
+ 	 color: #1C2224;
+ 	 font-size: 17px;
+ 	 margin-left : 66px; 
+}
+
+#info_complementaire_tonight p{
+ 	 color: #1C2224;
+ 	 font-size: 15px;
+ 	 margin-left : 50px; 
+}
+
+#info_complementaire_tonight h3{
+ 	 color: #1C2224;
+ 	 font-size: 17px;
+ 	 margin-left : 66px; 
+}
+
 #iconArrow{
+    padding-left: 46%;
+    margin-top: 10px;
+}
+
+#tonightIconArrow{
     padding-left: 46%;
     margin-top: 10px;
 }
@@ -544,6 +619,35 @@ html, body {
 }
 
 #programList li #startANDduration{
+    font-size: 13px;
+}
+
+#programListTonight{
+    padding-top: 0px;
+    padding-bottom: 15px;
+}
+
+#programListTonight li{
+    padding-top: 20px;
+    padding-bottom: 30px;
+    border-style: none solid solid none;
+    border-color: -moz-use-text-color black black -moz-use-text-color;
+    border-width: medium 0.5px 0.5px medium;
+    width: 100%;
+    border-right: none;
+
+}
+
+#programListTonight li #title{
+    padding-top: 0px;
+    font-size: 20px;
+}
+
+#programListTonight li #subtitle{
+    font-size: 15px;
+}
+
+#programListTonight li #startANDduration{
     font-size: 13px;
 }
 
@@ -626,7 +730,7 @@ ul, li{
     border-width: medium medium 0.5px;
     color: #FFF;
     list-style: none outside none;
-    padding-top: 15%;
+    padding-top: 5%;
     font-size: 25px;
 }
 
@@ -803,8 +907,40 @@ html, body {
  	 margin-left : 66px; 
 }
 
+#info_complementaire_tonight{
+    width: 100%;
+    height: 115px;
+    margin-left: 10px;
+    color: #1C2224;
+    overflow-y: hidden;
+
+}
+
+#info_complementaire_tonight h2{
+ 	 color: #1C2224;
+ 	 font-size: 17px;
+ 	 margin-left : 66px; 
+}
+
+#info_complementaire_tonight p{
+ 	 color: #1C2224;
+ 	 font-size: 15px;
+ 	 margin-left : 50px; 
+}
+
+#info_complementaire_tonight h3{
+ 	 color: #1C2224;
+ 	 font-size: 17px;
+ 	 margin-left : 66px; 
+}
+
 
 #iconArrow{
+    padding-left: 50%;
+    margin-top: 10px;
+}
+
+#tonightIconArrow{
     padding-left: 50%;
     margin-top: 10px;
 }
@@ -835,6 +971,35 @@ html, body {
 }
 
 #programList li #startANDduration{
+    font-size: 13px;
+}
+
+#programListTonight{
+    padding-top: 0px;
+    padding-bottom: 15px;
+}
+
+#programListTonight li{
+    padding-top: 20px;
+    padding-bottom: 15px;
+    border-style: none solid solid none;
+    border-color: -moz-use-text-color black black -moz-use-text-color;
+    border-width: medium 0.5px 0.5px medium;
+    width: 100%;
+    border-right: none;
+
+}
+
+#programListTonight li #title{
+    padding-top: 0px;
+    font-size: 20px;
+}
+
+#programListTonight li #subtitle{
+    font-size: 15px;
+}
+
+#programListTonight li #startANDduration{
     font-size: 13px;
 }
 
@@ -915,7 +1080,7 @@ ul, li{
     border-width: medium medium 0.5px;
     color: #FFF;
     list-style: none outside none;
-    padding-top: 15%;
+    padding-top: 5%;
     font-size: 25px;
 }
 
@@ -1072,7 +1237,21 @@ html, body {
 
 }
 
+#info_complementaire_tonight{
+    width: 100%;
+    height: 115px;
+    margin-left: 10px;
+    color: #1C2224;
+    overflow-y: hidden;
+
+}
+
 #iconArrow{
+    padding-left: 50%;
+    margin-top: 10px;
+}
+
+#tonightIconArrow{
     padding-left: 50%;
     margin-top: 10px;
 }
@@ -1103,6 +1282,35 @@ html, body {
 }
 
 #programList li #startANDduration{
+    font-size: 13px;
+}
+
+#programListTonight{
+    padding-top: 0px;
+    padding-bottom: 15px;
+}
+
+#programListTonight li{
+    padding-top: 20px;
+    padding-bottom: 15px;
+    border-style: none solid solid none;
+    border-color: -moz-use-text-color black black -moz-use-text-color;
+    border-width: medium 0.5px 0.5px medium;
+    width: 100%;
+    border-right: none;
+
+}
+
+#programListTonight li #title{
+    padding-top: 0px;
+    font-size: 20px;
+}
+
+#programListTonight li #subtitle{
+    font-size: 15px;
+}
+
+#programListTonight li #startANDduration{
     font-size: 13px;
 }
 
