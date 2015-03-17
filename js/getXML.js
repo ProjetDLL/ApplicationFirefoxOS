@@ -291,7 +291,7 @@ xhr.onreadystatechange = function() {
                                 programmeActeursS = programmeCreditsS.getElementsByTagName("actor");
                                 
                                 for(var x = 0; x < programmeActeursS.length; x++){
-                                    acteurs += programmeActeursS[x].textContent + ", ";
+                                    acteursS += programmeActeursS[x].textContent + ", ";
 
                                 }
 
